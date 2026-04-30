@@ -1,5 +1,7 @@
 package com.smartBanking.bank.User.Dto;
 
+
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

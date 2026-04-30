@@ -11,6 +11,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class LoginRequestDTO {
 	
+	
 	private String email;
 	
 	private String password;

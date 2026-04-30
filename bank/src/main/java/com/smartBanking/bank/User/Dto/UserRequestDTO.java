@@ -1,5 +1,8 @@
 package com.smartBanking.bank.User.Dto;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -14,13 +17,14 @@ import lombok.Setter;
 public class UserRequestDTO {
 	
 	private Long id;
-
+    
+	@NotBlank(message="Name is required")
 	private String name;
-	
+	@Email(message="Invalid Emali")
 	private String email;
-	
+	@Size(min=10,max=10,message="Phone number must be 10 digits")
 	private String phone;
-	
+	@Size(min=6,message="password At leas 6 Chareacters")
 	private String password;
 	
 	

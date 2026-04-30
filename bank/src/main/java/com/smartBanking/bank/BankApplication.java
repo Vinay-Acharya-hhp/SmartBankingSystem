@@ -11,3 +11,12 @@ public class BankApplication {
 	}
 
 }
+
+
+
+/*
+ * 
+ * 
+ * @ControllerAdvice
+ * @RestControllerAdvice
+ */
