@@ -54,4 +54,17 @@ public class GlobalExceptionHandler {
 				);
 		return new ResponseEntity<>(response,HttpStatus.CONFLICT);
 	}
+	
+	@ExceptionHandler(Exception.class)
+	public ResponseEntity<ApiResponse<?>> handleException(Exception e)
+	{
+		
+		ApiResponse<?> response=new ApiResponse<>(
+				e.getMessage(),
+				null,
+				false,
+				HttpStatus.INTERNAL_SERVER_ERROR.value()
+				);
+		return new ResponseEntity<>(response,HttpStatus.INTERNAL_SERVER_ERROR);
+	}
 }

@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import com.smartBanking.bank.User.Dto.UserRequestDTO;
 import com.smartBanking.bank.User.Dto.UserResponseDTO;
 import com.smartBanking.bank.User.Entity.User;
+import com.smartBanking.bank.User.exception.ResourceAlreadyExistsException;
 
 public class UserConverter {
 	
@@ -32,6 +33,25 @@ public class UserConverter {
 		dto.setCreatedAt(user.getCreatedAt());
 		
 		return dto;
+	}
+	
+	public static void updateUser(User user,UserRequestDTO dto)
+	{
+	 
+	 if(dto.getName()!=null) {
+		user.setName(dto.getName());
+	 }
+	 if(dto.getPhone()!=null) {
+		user.setPhone(dto.getPhone());
+	 }
+	  if(dto.getPassword()!=null) {
+	  
+		user.setPassword(dto.getPassword());
+		
+	  }
+	  
+	  
+		
 	}
 
 }

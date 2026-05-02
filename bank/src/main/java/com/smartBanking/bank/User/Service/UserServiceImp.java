@@ -1,7 +1,8 @@
 package com.smartBanking.bank.User.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.smartBanking.bank.User.Dto.LoginRequestDTO;
@@ -19,15 +20,25 @@ public class UserServiceImp implements UserService{
 	@Autowired
 	private UserRepo userrepo;
 	
-	UserServiceImp (UserRepo userrepo){
+	
+	//private BCryptPasswordEncoder encoder=new BCryptPasswordEncoder(12);
+	
+	@Autowired
+	private PasswordEncoder passwordencoder;
+	
+	UserServiceImp (UserRepo userrepo,PasswordEncoder passwordencoder){
 		this.userrepo=userrepo;
+		this.passwordencoder=passwordencoder;
 	}
+	
+	
 
 	public UserResponseDTO register(UserRequestDTO requestDTO) {
 		if(userrepo.existsByEmail(requestDTO.getEmail())) {
 			throw new ResourceAlreadyExistsException("Email Already Registerd");
 		}
 		User user=UserConverter.toEntity(requestDTO);
+		user.setPassword(passwordencoder.encode(requestDTO.getPassword()));
 		User saveuser=userrepo.save(user);
 		
 		return UserConverter.todto(saveuser);
@@ -36,13 +47,37 @@ public class UserServiceImp implements UserService{
 	 @Override
 		public LoginResponsDTO login(LoginRequestDTO loginrequestdto) {
 			User user=userrepo.findByEmail(loginrequestdto.getEmail());
-			if(user==null || !user.getPassword().equals(loginrequestdto.getPassword()))
+			if(user==null )
 			{
 				throw new UserNotFoundException("User Not Found");
+			}
+			if(!passwordencoder.matches(loginrequestdto.getPassword(), user.getPassword())) {
+				throw new RuntimeException("Invalid Password");
 			}
 			
 			return LoginConvertor.toLoginResponsDTO(user);
 			
+	 }
+
+	 @Override
+	 public UserResponseDTO update(String email, UserRequestDTO requestDTO) {
+		 User user=userrepo.findByEmail(email);
+		 
+		 if(user==null )
+			{
+				throw new UserNotFoundException("User Not Found");
+			}
+		 UserConverter.updateUser(user, requestDTO);
+		 
+		 User saveuser=userrepo.save(user);
+		 
+		return UserConverter.todto(saveuser);
+	 }
+
+	 @Override
+	 public String DeleteUser(Long id) {
+		// TODO Auto-generated method stub
+		return null;
 	 }
 }
 
