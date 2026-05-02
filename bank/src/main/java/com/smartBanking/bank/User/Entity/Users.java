@@ -1,12 +1,17 @@
 package com.smartBanking.bank.User.Entity;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
+import com.smartBanking.bank.Account.Entity.Account;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,7 +29,7 @@ import lombok.Setter;
 @Setter
 @Table(name="users")
 @Entity
-public class User {
+public class Users {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -40,6 +45,9 @@ public class User {
 	private String password;
 	
 	private LocalDateTime createdAt ;
+	
+	@OneToMany(mappedBy="users",cascade=CascadeType.ALL,orphanRemoval=true)
+	private List<Account> account;
 	
 	public Long getId() {
 		return id;

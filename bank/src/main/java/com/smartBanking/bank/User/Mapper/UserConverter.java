@@ -4,49 +4,49 @@ import java.time.LocalDateTime;
 
 import com.smartBanking.bank.User.Dto.UserRequestDTO;
 import com.smartBanking.bank.User.Dto.UserResponseDTO;
-import com.smartBanking.bank.User.Entity.User;
+import com.smartBanking.bank.User.Entity.Users;
 import com.smartBanking.bank.User.exception.ResourceAlreadyExistsException;
 
 public class UserConverter {
 	
 	//DTO->Entity
-	public static User toEntity(UserRequestDTO dto) {
-		User user=new User();
-		user.setName(dto.getName());
-		user.setEmail(dto.getEmail());
-		user.setPassword(dto.getPassword());
-		user.setPhone(dto.getPhone());
-		user.setCreatedAt(LocalDateTime.now());
+	public static Users toEntity(UserRequestDTO dto) {
+		Users users=new Users();
+		users.setName(dto.getName());
+		users.setEmail(dto.getEmail());
+		users.setPassword(dto.getPassword());
+		users.setPhone(dto.getPhone());
+		users.setCreatedAt(LocalDateTime.now());
 		
-		return user;
+		return users;
 	}
 	
 	//Entity->DTO
-	public static UserResponseDTO todto(User user) {
+	public static UserResponseDTO todto(Users users) {
 		
 		UserResponseDTO dto=new UserResponseDTO();
 		
-		dto.setId(user.getId());
-		dto.setName(user.getName());
-		dto.setEmail(user.getEmail());
-		dto.setPhone(user.getPhone());
-		dto.setCreatedAt(user.getCreatedAt());
+		dto.setId(users.getId());
+		dto.setName(users.getName());
+		dto.setEmail(users.getEmail());
+		dto.setPhone(users.getPhone());
+		dto.setCreatedAt(users.getCreatedAt());
 		
 		return dto;
 	}
 	
-	public static void updateUser(User user,UserRequestDTO dto)
+	public static void updateUser(Users users,UserRequestDTO dto)
 	{
 	 
 	 if(dto.getName()!=null) {
-		user.setName(dto.getName());
+		users.setName(dto.getName());
 	 }
 	 if(dto.getPhone()!=null) {
-		user.setPhone(dto.getPhone());
+		users.setPhone(dto.getPhone());
 	 }
 	  if(dto.getPassword()!=null) {
 	  
-		user.setPassword(dto.getPassword());
+		users.setPassword(dto.getPassword());
 		
 	  }
 	  

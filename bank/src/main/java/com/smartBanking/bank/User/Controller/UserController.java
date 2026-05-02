@@ -21,7 +21,7 @@ import com.smartBanking.bank.User.Dto.LoginRequestDTO;
 import com.smartBanking.bank.User.Dto.LoginResponsDTO;
 import com.smartBanking.bank.User.Dto.UserRequestDTO;
 import com.smartBanking.bank.User.Dto.UserResponseDTO;
-import com.smartBanking.bank.User.Entity.User;
+import com.smartBanking.bank.User.Entity.Users;
 import com.smartBanking.bank.User.Mapper.UserConverter;
 import com.smartBanking.bank.User.Repository.UserRepo;
 //import com.smartBanking.bank.User.Entity.User;
@@ -80,10 +80,10 @@ public class UserController {
 	
 
 	@GetMapping("/getall")
-	public List<User> getall()
+	public List<Users> getall()
 	{
-		 List<User> user=repo.findAll();
-		 return user;
+		 List<Users> users=repo.findAll();
+		 return users;
 	}
 }
 

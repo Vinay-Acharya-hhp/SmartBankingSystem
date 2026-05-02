@@ -3,29 +3,29 @@ package com.smartBanking.bank.User.Mapper;
 import com.smartBanking.bank.User.Dto.LoginRequestDTO;
 
 import com.smartBanking.bank.User.Dto.LoginResponsDTO;
-import com.smartBanking.bank.User.Entity.User;
+import com.smartBanking.bank.User.Entity.Users;
 
 public class LoginConvertor {
 	
 	
 	//RequestDto->Entity
-	public static User toLoginEntity(LoginRequestDTO dto)
+	public static Users toLoginEntity(LoginRequestDTO dto)
 	{
-		User user=new User();
-		user.setEmail(dto.getEmail());
-		user.setPassword(dto.getPassword());
+		Users users=new Users();
+		users.setEmail(dto.getEmail());
+		users.setPassword(dto.getPassword());
 		
-		return user;
+		return users;
 	}
 	
 	//Entity->ResponsDTO
-	public static LoginResponsDTO  toLoginResponsDTO (User user)
+	public static LoginResponsDTO  toLoginResponsDTO (Users users)
 	{
 		LoginResponsDTO dto =new LoginResponsDTO();
 		dto.setToken("stoken created");
-		dto.setId(user.getId());
-		dto.setName(user.getName());
-		dto.setEmail(user.getEmail());
+		dto.setId(users.getId());
+		dto.setName(users.getName());
+		dto.setEmail(users.getEmail());
 		dto.setMessage("Login succefull");
 		return dto;
 		
