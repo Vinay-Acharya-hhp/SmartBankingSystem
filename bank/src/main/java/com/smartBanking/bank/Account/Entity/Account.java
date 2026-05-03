@@ -1,7 +1,9 @@
 package com.smartBanking.bank.Account.Entity;
 
 import java.math.BigDecimal;
+import java.util.List;
 
+import com.smartBanking.bank.Transaction.Entity.Transaction;
 import com.smartBanking.bank.User.Entity.Users;
 
 import jakarta.persistence.Column;
@@ -13,6 +15,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -64,6 +67,12 @@ public class Account {
 	@JoinColumn(name="user_id",nullable=false)
 	private Users users;
 
+	
+	@OneToMany(mappedBy="fromAccount")
+	private List<Transaction> sentTransaction;
+	@OneToMany(mappedBy="toAccount")
+	private List<Transaction> receivedTransaction;
+
 	public Long getId() {
 		return id;
 	}
@@ -103,6 +112,23 @@ public class Account {
 	public void setUsers(Users users) {
 		this.users = users;
 	}
+	
+	public List<Transaction> getSentTransaction() {
+		return sentTransaction;
+	}
+
+	public void setSentTransaction(List<Transaction> sentTransaction) {
+		this.sentTransaction = sentTransaction;
+	}
+
+	public List<Transaction> getReceivedTransaction() {
+		return receivedTransaction;
+	}
+
+	public void setReceivedTransaction(List<Transaction> receivedTransaction) {
+		this.receivedTransaction = receivedTransaction;
+	}
+
 	
 	
 }

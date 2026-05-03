@@ -2,6 +2,7 @@ package com.smartBanking.bank.User.exception;
 
 import java.time.LocalDateTime;
 
+//import javax.security.auth.login.AccountNotFoundException;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -66,5 +67,34 @@ public class GlobalExceptionHandler {
 				HttpStatus.INTERNAL_SERVER_ERROR.value()
 				);
 		return new ResponseEntity<>(response,HttpStatus.INTERNAL_SERVER_ERROR);
+	}
+	
+	
+	@ExceptionHandler(AccountNotFoundException.class)
+	public ResponseEntity<ApiResponse<?>> handleAccountNotFoundException(AccountNotFoundException e)
+	{
+		
+		ApiResponse<?> response=new ApiResponse<>(
+				e.getMessage(),
+				null,
+				false,
+				HttpStatus.NOT_FOUND.value()
+				);
+		return new ResponseEntity<>(response,HttpStatus.NOT_FOUND);
+	}
+	
+	
+
+	@ExceptionHandler(InsufficiantBalanceException.class)
+	public ResponseEntity<ApiResponse<?>> handleInsufficiantBalanceException(InsufficiantBalanceException e)
+	{
+		
+		ApiResponse<?> response=new ApiResponse<>(
+				e.getMessage(),
+				null,
+				false,
+				HttpStatus.CONFLICT.value()
+				);
+		return new ResponseEntity<>(response,HttpStatus.CONFLICT);
 	}
 }
