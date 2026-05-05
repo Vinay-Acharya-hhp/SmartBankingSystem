@@ -43,17 +43,7 @@ public class Transaction {
 	
 	@Enumerated(EnumType.STRING)
 	private TransactionType type;
-//	
-//	private String reference;
-//	
-//	
-//	public String getReference() {
-//		return reference;
-//	}
-//
-//	public void setReference(String reference) {
-//		this.reference = reference;
-//	}
+
 
 	private LocalDateTime timestamp;
 
@@ -72,14 +62,7 @@ public class Transaction {
 	public void setAccount(Account fromAccount) {
 		this.account = fromAccount;
 	}
-//
-//	public Account getToAccount() {
-//		return toAccount;
-//	}
-//
-//	public void setToAccount(Account toAccount) {
-//		this.toAccount = toAccount;
-//	}
+
 
 	public BigDecimal getAmount() {
 		return amount;

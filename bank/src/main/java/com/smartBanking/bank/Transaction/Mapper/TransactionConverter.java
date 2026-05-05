@@ -11,13 +11,7 @@ public class TransactionConverter {
 		dto.setAmount(transaction.getAmount());
 		dto.setType(transaction.getType().name());
 		dto.setTimestamp(transaction.getTimestamp());
-//		
-//		if(transaction.getAccount()!=null) {
-//			dto.setFromAccount(transaction.getAccount().getAccountNumber());
-//		}
-//		if(transaction.getToAccount()!=null) {
-//			dto.setToAccount(transaction.getToAccount().getAccountNumber());
-//		}
+
 		
 		
 		return dto;
