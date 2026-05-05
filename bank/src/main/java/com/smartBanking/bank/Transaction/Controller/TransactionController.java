@@ -39,5 +39,32 @@ public class TransactionController {
 	  
  }
  
+ 
+ 
+ @PostMapping("/withdraw")
+ public ResponseEntity<ApiResponse<TransactionResponseDTO>> withdraw(@RequestParam String accountNumber,
+		 			   @RequestParam BigDecimal amount) {
+	 
+	 TransactionResponseDTO saved = transactionservice.Withdraw(accountNumber, amount);
+		
+	   ApiResponse<TransactionResponseDTO> response = new ApiResponse<> ("Deposited Succesfull", saved ,true , 200);
+		
+		return new ResponseEntity<>(response,HttpStatus.OK);
+	  
+ }
+ 
+
+ @PostMapping("/transfer")
+ public ResponseEntity<ApiResponse<TransactionResponseDTO>> withdraw(@RequestParam String sender,
+		 															@RequestParam String reciever,
+		 															@RequestParam BigDecimal amount) {
+	 
+	 TransactionResponseDTO saved = transactionservice.Transfer(sender,reciever, amount);
+		
+	   ApiResponse<TransactionResponseDTO> response = new ApiResponse<> ("Deposited Succesfull", saved ,true , 200);
+		
+		return new ResponseEntity<>(response,HttpStatus.OK);
+	  
+ }
 
 }

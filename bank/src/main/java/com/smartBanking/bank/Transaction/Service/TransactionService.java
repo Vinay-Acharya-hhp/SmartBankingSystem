@@ -9,9 +9,9 @@ public interface TransactionService {
 	
 	TransactionResponseDTO Deposit(String accountNumber,BigDecimal amount);
 	
-	String Withdraw(String accountNumber,BigDecimal amount);
+	TransactionResponseDTO Withdraw(String accountNumber,BigDecimal amount);
 	
-	String Transfer(String fromAccount,String toaccount,BigDecimal amount);
+	TransactionResponseDTO Transfer(String fromAccount,String toaccount,BigDecimal amount);
 	
 	List<TransactionResponseDTO> getTransaction(String accountNumber); 
 

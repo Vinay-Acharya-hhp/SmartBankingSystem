@@ -68,10 +68,9 @@ public class Account {
 	private Users users;
 
 	
-	@OneToMany(mappedBy="fromAccount")
+	@OneToMany(mappedBy="account")
 	private List<Transaction> sentTransaction;
-	@OneToMany(mappedBy="toAccount")
-	private List<Transaction> receivedTransaction;
+
 
 	public Long getId() {
 		return id;
@@ -121,13 +120,6 @@ public class Account {
 		this.sentTransaction = sentTransaction;
 	}
 
-	public List<Transaction> getReceivedTransaction() {
-		return receivedTransaction;
-	}
-
-	public void setReceivedTransaction(List<Transaction> receivedTransaction) {
-		this.receivedTransaction = receivedTransaction;
-	}
 
 	
 	

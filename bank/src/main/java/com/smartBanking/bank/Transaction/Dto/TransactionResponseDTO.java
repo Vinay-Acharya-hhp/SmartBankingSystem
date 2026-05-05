@@ -17,15 +17,23 @@ public class TransactionResponseDTO {
 	
 	
 	private String id;
-	
-	private String fromAccount;
-	
-	private String toAccount;
+
 	
 	private BigDecimal amount;
 	
 	private String type;
 	
+	private String account;
+	
+
+	public String getAccount() {
+		return account;
+	}
+
+	public void setAccount(String account) {
+		this.account = account;
+	}
+
 	private LocalDateTime timestamp;
 
 	public String getId() {
@@ -35,22 +43,8 @@ public class TransactionResponseDTO {
 	public void setId(String id) {
 		this.id = id;
 	}
-
-	public String getFromAccount() {
-		return fromAccount;
-	}
-
-	public void setFromAccount(String fromAccount) {
-		this.fromAccount = fromAccount;
-	}
-
-	public String getToAccount() {
-		return toAccount;
-	}
-
-	public void setToAccount(String toAccount) {
-		this.toAccount = toAccount;
-	}
+	
+	
 
 	public BigDecimal getAmount() {
 		return amount;

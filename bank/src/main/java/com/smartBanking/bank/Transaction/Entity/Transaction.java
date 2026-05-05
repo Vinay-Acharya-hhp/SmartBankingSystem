@@ -27,22 +27,34 @@ public class Transaction {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.UUID)
+	private String transactionId;
+	
+	
+	
 	private String id;
 	
 	@ManyToOne
-	@JoinColumn(name="from_account_id")
-	private Account fromAccount;
+	@JoinColumn(name="account_id")
+	private Account account;
 	
-	@ManyToOne
-	@JoinColumn(name="to_account_id")
-	private Account toAccount;
+	
 	
 	private BigDecimal amount;
 	
 	@Enumerated(EnumType.STRING)
 	private TransactionType type;
-	
-	
+//	
+//	private String reference;
+//	
+//	
+//	public String getReference() {
+//		return reference;
+//	}
+//
+//	public void setReference(String reference) {
+//		this.reference = reference;
+//	}
+
 	private LocalDateTime timestamp;
 
 	public String getId() {
@@ -53,21 +65,21 @@ public class Transaction {
 		this.id = id;
 	}
 
-	public Account getFromAccount() {
-		return fromAccount;
+	public Account getAccount() {
+		return account;
 	}
 
-	public void setFromAccount(Account fromAccount) {
-		this.fromAccount = fromAccount;
+	public void setAccount(Account fromAccount) {
+		this.account = fromAccount;
 	}
-
-	public Account getToAccount() {
-		return toAccount;
-	}
-
-	public void setToAccount(Account toAccount) {
-		this.toAccount = toAccount;
-	}
+//
+//	public Account getToAccount() {
+//		return toAccount;
+//	}
+//
+//	public void setToAccount(Account toAccount) {
+//		this.toAccount = toAccount;
+//	}
 
 	public BigDecimal getAmount() {
 		return amount;

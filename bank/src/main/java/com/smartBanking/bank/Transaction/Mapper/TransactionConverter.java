@@ -11,16 +11,36 @@ public class TransactionConverter {
 		dto.setAmount(transaction.getAmount());
 		dto.setType(transaction.getType().name());
 		dto.setTimestamp(transaction.getTimestamp());
-		
-		if(transaction.getFromAccount()!=null) {
-			dto.setFromAccount(transaction.getFromAccount().getAccountNumber());
-		}
-		if(transaction.getToAccount()!=null) {
-			dto.setToAccount(transaction.getToAccount().getAccountNumber());
-		}
+//		
+//		if(transaction.getAccount()!=null) {
+//			dto.setFromAccount(transaction.getAccount().getAccountNumber());
+//		}
+//		if(transaction.getToAccount()!=null) {
+//			dto.setToAccount(transaction.getToAccount().getAccountNumber());
+//		}
 		
 		
 		return dto;
+		
+	}
+	
+	public static TransactionResponseDTO tosenderDto(Transaction transaction) {
+		TransactionResponseDTO senderdto =new TransactionResponseDTO();
+		senderdto.setId(transaction.getId());
+		senderdto.setAmount(transaction.getAmount());
+		senderdto.setType(transaction.getType().name());
+		senderdto.setTimestamp(transaction.getTimestamp());
+		
+		if(transaction.getAccount()!=null) {
+			senderdto.setAccount(transaction.getAccount().getAccountNumber());
+		}
+		
+		if(transaction.getAccount()!=null) {
+			senderdto.setAccount(transaction.getAccount().getAccountNumber());
+		}
+		
+		
+		return senderdto;
 		
 	}
 
