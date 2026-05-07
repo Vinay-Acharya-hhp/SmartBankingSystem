@@ -31,41 +31,6 @@ public class AccountRequestDTO {
 	
 	
 
-	public AccountRequestDTO() {
-		
-	}
-
-	public AccountRequestDTO(AccountType accountType, String email, BigDecimal initialBalance) {
-		super();
-		this.accountType = accountType;
-		this.email = email;
-		this.initialBalance = initialBalance;
-	}
-
-	public AccountType getAccountType() {
-		return accountType;
-	}
-
-	public void setAccountType(AccountType accountType) {
-		this.accountType = accountType;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public BigDecimal getInitialBalance() {
-		return initialBalance;
-	}
-
-	public void setInitialBalance(BigDecimal initialBalance) {
-		this.initialBalance = initialBalance;
-	}
-	
 	
 
 }

@@ -15,7 +15,9 @@ import lombok.Setter;
 public class TransactionResponseDTO {
 	
 	
+	private String transactionId;
 	
+
 	private String id;
 
 	
@@ -26,6 +28,17 @@ public class TransactionResponseDTO {
 	private String account;
 	
 
+	
+	
+	public String getTransactionId() {
+		return transactionId;
+	}
+
+	public void setTransactionId(String transactionId) {
+		this.transactionId = transactionId;
+	}
+	
+	
 	public String getAccount() {
 		return account;
 	}

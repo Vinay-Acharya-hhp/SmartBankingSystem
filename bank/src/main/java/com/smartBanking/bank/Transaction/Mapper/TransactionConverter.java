@@ -7,7 +7,7 @@ public class TransactionConverter {
 	
 	public static TransactionResponseDTO toDto(Transaction transaction) {
 		TransactionResponseDTO dto =new TransactionResponseDTO();
-		dto.setId(transaction.getId());
+		dto.setId(transaction.getTransactionId());
 		dto.setAmount(transaction.getAmount());
 		dto.setType(transaction.getType().name());
 		dto.setTimestamp(transaction.getTimestamp());

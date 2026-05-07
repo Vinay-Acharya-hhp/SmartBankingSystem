@@ -31,6 +31,7 @@ public class Transaction {
 	
 	
 	
+
 	private String id;
 	
 	@ManyToOne
@@ -46,46 +47,6 @@ public class Transaction {
 
 
 	private LocalDateTime timestamp;
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public Account getAccount() {
-		return account;
-	}
-
-	public void setAccount(Account fromAccount) {
-		this.account = fromAccount;
-	}
-
-
-	public BigDecimal getAmount() {
-		return amount;
-	}
-
-	public void setAmount(BigDecimal amount) {
-		this.amount = amount;
-	}
-
-	public TransactionType getType() {
-		return type;
-	}
-
-	public void setType(TransactionType type) {
-		this.type = type;
-	}
-
-	public LocalDateTime getTimestamp() {
-		return timestamp;
-	}
-
-	public void setTimestamp(LocalDateTime timestamp) {
-		this.timestamp = timestamp;
-	}
+	
 
 }

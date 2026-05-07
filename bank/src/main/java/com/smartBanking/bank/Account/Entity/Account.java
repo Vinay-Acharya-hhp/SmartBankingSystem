@@ -36,18 +36,7 @@ public class Account {
 	
 	
 
-	public Account() {
-		
-	}
 
-	public Account(Long id, String accountNumber, AccountType accountType, BigDecimal balance, Users users) {
-		super();
-		this.id = id;
-		this.accountNumber = accountNumber;
-		this.accountType = accountType;
-		this.balance = balance;
-		this.users = users;
-	}
 
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -70,55 +59,6 @@ public class Account {
 	
 	@OneToMany(mappedBy="account")
 	private List<Transaction> sentTransaction;
-
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getAccountNumber() {
-		return accountNumber;
-	}
-
-	public void setAccountNumber(String accountNumber) {
-		this.accountNumber = accountNumber;
-	}
-
-	public AccountType getAccountType() {
-		return accountType;
-	}
-
-	public void setAccountType(AccountType accountType) {
-		this.accountType = accountType;
-	}
-
-	public BigDecimal getBalance() {
-		return balance;
-	}
-
-	public void setBalance(BigDecimal balance) {
-		this.balance = balance;
-	}
-
-	public Users getUsers() {
-		return users;
-	}
-
-	public void setUsers(Users users) {
-		this.users = users;
-	}
-	
-	public List<Transaction> getSentTransaction() {
-		return sentTransaction;
-	}
-
-	public void setSentTransaction(List<Transaction> sentTransaction) {
-		this.sentTransaction = sentTransaction;
-	}
 
 
 	

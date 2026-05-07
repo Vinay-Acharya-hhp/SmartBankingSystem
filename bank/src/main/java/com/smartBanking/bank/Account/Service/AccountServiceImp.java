@@ -1,11 +1,13 @@
 package com.smartBanking.bank.Account.Service;
 
 import java.util.stream.*;
+
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ThreadLocalRandom;
 
+import org.apache.juli.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +21,11 @@ import com.smartBanking.bank.User.Repository.UserRepo;
 import com.smartBanking.bank.User.exception.AccountNotFoundException;
 import com.smartBanking.bank.User.exception.InsufficiantBalanceException;
 import com.smartBanking.bank.User.exception.UserNotFoundException;
+
+import lombok.extern.slf4j.Slf4j;
+
+
+@Slf4j
 @Service
 public class AccountServiceImp implements AccountService {
 	
@@ -52,16 +59,19 @@ public class AccountServiceImp implements AccountService {
 		}
 		acc.setUsers(user);
 		Account saveacc=accountRepo.save(acc);
+		log.info(AccountNumber+"Created Account");
 		return AccountConverter.toDto(saveacc);
 	}
 
 	@Override
 	public AccountResponseDTO getAccountByAccountNumber(String accountNumber) {
+		log.info("started finding "+accountNumber);
 		Account acc=accountRepo.findByAccountNumber(accountNumber);
 		if(acc==null) {
+			log.error(accountNumber+"Not Found");
 			throw new AccountNotFoundException("Account Not Found");
 		}
-		
+		log.info(accountNumber+"finded");
 		return AccountConverter.toDto(acc);
 	}
 
@@ -72,6 +82,7 @@ public class AccountServiceImp implements AccountService {
 		}
 		Account acc=accountRepo.findByAccountNumber(accountNumber);
 		if(acc==null) {
+			log.warn("Account Not found {}",accountNumber);
 			throw new AccountNotFoundException("Account Not Found");
 		}
 	   acc.setBalance(acc.getBalance().add(amount));
@@ -82,11 +93,18 @@ public class AccountServiceImp implements AccountService {
 	@Override
 	public AccountResponseDTO withdrow(String accountNumber, BigDecimal amount) {
 		if(amount.compareTo(BigDecimal.ZERO)<=0) {
+			log.warn("{} Amount must be greater than 0", accountNumber);
 			throw new InsufficiantBalanceException("Amount must be greater than zero");	
 		}
+		
 		Account acc=accountRepo.findByAccountNumber(accountNumber);
 		if(acc==null) {
+			log.error("Account Not found {}",accountNumber);
 			throw new AccountNotFoundException("Account Not Found");
+		}
+		if(acc.getBalance().compareTo(amount)<0) {
+			log.warn("Account {} Insufficient balance ,Your balance less than {} ",accountNumber,amount);
+			throw new InsufficiantBalanceException("Insufficient Balance ,Your balance less than "+amount);	
 		}
 	   acc.setBalance(acc.getBalance().subtract(amount));
 	   Account save=accountRepo.save(acc);

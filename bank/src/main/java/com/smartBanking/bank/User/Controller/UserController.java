@@ -32,7 +32,10 @@ import com.smartBanking.bank.apiResponse.ApiResponse;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 
+
+@Slf4j
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -45,12 +48,16 @@ public class UserController {
 	
 	@PostMapping("/register")
 	public ResponseEntity<ApiResponse<UserResponseDTO>> register(@Valid @RequestBody UserRequestDTO requestDTO) {
+		log.info("Registration request received for email {}",requestDTO.getEmail());
 		
+
 		UserResponseDTO saved = userserviceimp.register(requestDTO);
 		
 	   ApiResponse<UserResponseDTO> response = new ApiResponse<> ("Registration Succesfull", saved ,true , 201);
 		
 		return new ResponseEntity<>(response,HttpStatus.CREATED);
+		
+		
 	}
 	
 	@PostMapping("/login")

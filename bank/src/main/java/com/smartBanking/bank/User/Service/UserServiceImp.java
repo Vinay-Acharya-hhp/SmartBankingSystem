@@ -14,6 +14,10 @@ import com.smartBanking.bank.User.Mapper.LoginConvertor;
 import com.smartBanking.bank.User.Mapper.UserConverter;
 import com.smartBanking.bank.User.Repository.UserRepo;
 import com.smartBanking.bank.User.exception.*;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 public class UserServiceImp implements UserService{
 	
@@ -35,42 +39,49 @@ public class UserServiceImp implements UserService{
 
 	public UserResponseDTO register(UserRequestDTO requestDTO) {
 		if(userrepo.existsByEmail(requestDTO.getEmail())) {
+			log.warn(requestDTO.getEmail()+"Already Exists");
 			throw new ResourceAlreadyExistsException("Email Already Registerd");
 		}
 		Users users=UserConverter.toEntity(requestDTO);
 		users.setPassword(passwordencoder.encode(requestDTO.getPassword()));
 		Users saveuser=userrepo.save(users);
-		
+		log.info("User Register Sucessfully{}",requestDTO.getEmail());
 		return UserConverter.todto(saveuser);
 	}
 
 	 @Override
 		public LoginResponsDTO login(LoginRequestDTO loginrequestdto) {
+		 log.info("S");
 			Users users=userrepo.findByEmail(loginrequestdto.getEmail());
 			if(users==null )
 			{
+				log.warn("Email not found{}",loginrequestdto.getEmail());
 				throw new UserNotFoundException("User Not Found");
 			}
 			if(!passwordencoder.matches(loginrequestdto.getPassword(), users.getPassword())) {
+				
 				throw new RuntimeException("Invalid Password");
 			}
-			
+			log.info("Login Successfully");
 			return LoginConvertor.toLoginResponsDTO(users);
 			
 	 }
 
 	 @Override
 	 public UserResponseDTO update(String email, UserRequestDTO requestDTO) {
+		 
+		 log.info("Started searching {}",email);
 		 Users users=userrepo.findByEmail(email);
 		 
 		 if(users==null )
 			{
+			 log.error("email not found{}",email);
 				throw new UserNotFoundException("User Not Found");
 			}
 		 UserConverter.updateUser(users, requestDTO);
 		 
 		 Users saveuser=userrepo.save(users);
-		 
+		 log.info("Updated succesfully{}",email);
 		return UserConverter.todto(saveuser);
 	 }
 
