@@ -66,3 +66,8 @@
 2026-05-31 11:08:49 [INFO] c.s.b.T.S.TransactionServiceImp -Amount 1000 successfully deposited from account number 394389930 
 2026-05-31 11:09:23 [INFO] c.s.b.T.C.TransactionController -Amount Withdraw request received for account number :394389930
 2026-05-31 11:09:23 [INFO] c.s.b.T.S.TransactionServiceImp -Amount 1000 successfully deposited from account number 394389930 
+2026-05-31 11:09:33 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 16120 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-05-31 11:09:33 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
+2026-05-31 11:09:37 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 4.848 seconds (process running for 5.19)
+2026-05-31 11:10:29 [INFO] c.s.b.T.C.TransactionController -Amount Withdraw request received for account number :394389930
+2026-05-31 11:10:29 [INFO] c.s.b.T.S.TransactionServiceImp -Amount 1000 successfully deposited from account number 394389930 
