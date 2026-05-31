@@ -11,7 +11,7 @@ public class TransactionConverter {
 		dto.setAmount(transaction.getAmount());
 		dto.setType(transaction.getType().name());
 		dto.setTimestamp(transaction.getTimestamp());
-
+        dto.setBalance(transaction.getAccount().getBalance());
 		
 		
 		return dto;
@@ -33,7 +33,7 @@ public class TransactionConverter {
 			senderdto.setAccount(transaction.getAccount().getAccountNumber());
 		}
 		
-		
+		senderdto.setBalance(transaction.getAccount().getBalance());
 		return senderdto;
 		
 	}

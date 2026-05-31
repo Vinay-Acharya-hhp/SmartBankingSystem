@@ -1,9 +1,11 @@
 package com.smartBanking.bank.Transaction.Entity;
 
 import java.math.BigDecimal;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.smartBanking.bank.Account.Entity.Account;
 
 import jakarta.persistence.Entity;
@@ -34,6 +36,7 @@ public class Transaction {
 
 	private String id;
 	
+	@JsonBackReference
 	@ManyToOne
 	@JoinColumn(name="account_id")
 	private Account account;

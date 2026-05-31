@@ -1,5 +1,7 @@
 package com.smartBanking.bank.User.Dto;
 
+import com.smartBanking.bank.User.Entity.UserType;
+
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -24,6 +26,8 @@ public class UserRequestDTO {
 	private String email;
 	@Size(min=10,max=10,message="Phone number must be 10 digits")
 	private String phone;
+	
+	private UserType type;
 	@Size(min=6,message="password At leas 6 Chareacters")
 	private String password;
 	

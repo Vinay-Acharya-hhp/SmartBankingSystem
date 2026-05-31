@@ -3,11 +3,14 @@ package com.smartBanking.bank.User.Entity;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.smartBanking.bank.Account.Entity.Account;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -43,6 +46,8 @@ public class Users {
 	
 	private String email;
 	
+	@Enumerated(EnumType.STRING)
+	private UserType type=UserType.USER;
 	
     private String phone;
 	
@@ -50,6 +55,7 @@ public class Users {
 	
 	private LocalDateTime createdAt ;
 	
+	@JsonManagedReference
 	@OneToMany(mappedBy="users",cascade=CascadeType.ALL,orphanRemoval=true)
 	private List<Account> account;
 	

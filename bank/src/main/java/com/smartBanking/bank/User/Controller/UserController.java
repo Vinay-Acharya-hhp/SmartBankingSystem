@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.smartBanking.bank.Configuration.JWTService;
 import com.smartBanking.bank.User.Dto.LoginRequestDTO;
 import com.smartBanking.bank.User.Dto.LoginResponsDTO;
 import com.smartBanking.bank.User.Dto.UserRequestDTO;
@@ -43,43 +44,46 @@ public class UserController {
 	@Autowired
 	private UserServiceImp userserviceimp;
 	
+	
+	
 	@Autowired
 	private UserRepo repo;
 	
 	@PostMapping("/register")
-	public ResponseEntity<ApiResponse<UserResponseDTO>> register(@Valid @RequestBody UserRequestDTO requestDTO) {
-		log.info("Registration request received for email {}",requestDTO.getEmail());
-		
-
+	public ResponseEntity<ApiResponse<UserResponseDTO>> register
+											(@Valid @RequestBody UserRequestDTO requestDTO) {
+		log.info("Registration request received for Email  {}",requestDTO.getEmail());
 		UserResponseDTO saved = userserviceimp.register(requestDTO);
-		
-	   ApiResponse<UserResponseDTO> response = new ApiResponse<> ("Registration Succesfull", saved ,true , 201);
-		
+	    ApiResponse<UserResponseDTO> response = new ApiResponse<> 
+	    										("Registration Succesfull", saved ,true , 201);
 		return new ResponseEntity<>(response,HttpStatus.CREATED);
 		
 		
 	}
 	
-	@PostMapping("/login")
-	public ResponseEntity<ApiResponse<LoginResponsDTO>> login(@RequestBody LoginRequestDTO loginrequestdto)
-	
-	{  
-		LoginResponsDTO loginDTO = userserviceimp.login(loginrequestdto);
-		
-		ApiResponse<LoginResponsDTO> response=new ApiResponse<>("Login Succefully",loginDTO,true ,200);
-		
-		return new ResponseEntity<>(response,HttpStatus.OK);
-		
-		
-	}
+//	@PostMapping("/login")
+//	public ResponseEntity<ApiResponse<LoginResponsDTO>> login
+//											    (@RequestBody LoginRequestDTO loginrequestdto){  
+//		log.info("Login request received for Email {}",loginrequestdto.getEmail());
+//		
+//		
+//		 userserviceimp.verify(loginrequestdto);
+//		LoginResponsDTO loginDTO = userserviceimp.login(loginrequestdto);
+//		ApiResponse<LoginResponsDTO> response=new ApiResponse<>
+//												("Login Succefully",loginDTO,true ,200);
+//		
+//		return new ResponseEntity<>(response,HttpStatus.OK);
+//		
+//		
+//	}
 	
 	@PutMapping("/update/{email}")
-	 public ResponseEntity<ApiResponse<UserResponseDTO>> update(@PathVariable String email,@RequestBody UserRequestDTO requestDTO) {
-		
+	 public ResponseEntity<ApiResponse<UserResponseDTO>> update
+	 							(@PathVariable String email,@RequestBody UserRequestDTO requestDTO) {
+		log.info("Update request received for Email {}",email);
 		UserResponseDTO saved = userserviceimp.update(email, requestDTO);
-		
-	   ApiResponse<UserResponseDTO> response = new ApiResponse<> ("Update Succesfull", saved ,true , 200);
-		
+	    ApiResponse<UserResponseDTO> response = new ApiResponse<>
+	    							("Update Succesfull", saved ,true , 200);
 		return new ResponseEntity<>(response,HttpStatus.OK);
 	 }
 
@@ -92,6 +96,14 @@ public class UserController {
 		 List<Users> users=repo.findAll();
 		 return users;
 	}
+	
+	
+	@PostMapping("/login")
+	public String login(@RequestBody LoginRequestDTO loginrequestdto) {
+		return userserviceimp.verify(loginrequestdto);
+	}
+	
+	
 }
 
 	

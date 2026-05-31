@@ -1,5 +1,5 @@
 package com.smartBanking.bank.User.Entity;
-/*
+
 import java.util.Collection;
 import java.util.Collections;
 
@@ -11,11 +11,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 //@SuppressWarnings("serial")
 public class UsersPrincipal implements UserDetails{
 
-	private User user;
+	private Users user;
 	
 	
 	
-	public UsersPrincipal(User user) {
+	public UsersPrincipal(Users user) {
 		this.user = user;
 	}
 
@@ -23,7 +23,7 @@ public class UsersPrincipal implements UserDetails{
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO Auto-generated method stub
-		return Collections.singleton(new SimpleGrantedAuthority("USER"));
+		return Collections.singleton(new SimpleGrantedAuthority("ROLE_"+user.getType().name()));
 	}
 	
 
@@ -65,4 +65,4 @@ public class UsersPrincipal implements UserDetails{
 
 
 }
-*/
+

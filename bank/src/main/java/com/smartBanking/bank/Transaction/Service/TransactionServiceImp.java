@@ -1,6 +1,7 @@
 package com.smartBanking.bank.Transaction.Service;
 
 import java.math.BigDecimal;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -47,16 +48,15 @@ public class TransactionServiceImp implements TransactionService {
 	public TransactionResponseDTO Deposit(String accountNumber, BigDecimal amount) {
 
 		if(amount.compareTo(BigDecimal.ZERO)<=0) {
-			log.warn("{} Amount must be greater than 0", accountNumber);
+			log.warn("Invalid deposit amount for account number :{}",accountNumber);
 			throw new InsufficiantBalanceException("Amount must be greater than zero");	
 		}
 		
-		logger.info("Deposited request from accountNumber{}",accountNumber);
 		
 		Account acc=accountRepo.findByAccountNumber(accountNumber);
 		
 		if(acc==null) {
-			log.warn("Account not found {}",accountNumber);
+			log.error("Account not fount for account number : {}",accountNumber);
 			throw new AccountNotFoundException("Account Not Found");
 		}
 		
@@ -68,10 +68,11 @@ public class TransactionServiceImp implements TransactionService {
 	    transaction.setId(transaction.getTransactionId());
 		transaction.setAmount(amount);
 		transaction.setType(TransactionType.CREDIT);
+		
 		transaction.setTimestamp(LocalDateTime.now());
 		
 		Transaction t=transactionRepo.save(transaction);
-		logger.info("Deposited {} from accountNumber {}",amount,accountNumber);
+		logger.info("Amount {} successfully deposited from account number {} ",amount,accountNumber);
 		return TransactionConverter.toDto(t);
 		
 		
@@ -81,18 +82,18 @@ public class TransactionServiceImp implements TransactionService {
 	public TransactionResponseDTO Withdraw(String accountNumber, BigDecimal amount) {
 		
 		if(amount.compareTo(BigDecimal.ZERO)<=0) {
-			log.warn("{} Amount must be greater than 0", accountNumber);
+			log.warn("Invalid deposit amount for account number :{}",accountNumber);
 			throw new InsufficiantBalanceException("Amount must be greater than zero");	
 		}
-		logger.info("Withdraw request from accountNumber{}",accountNumber);
+	
 		Account acc=accountRepo.findByAccountNumber(accountNumber);
 		
 		if(acc==null) {
-			log.warn("Account not found {}",accountNumber);
+			log.error("Account not found with account number {}",accountNumber);
 			throw new AccountNotFoundException("Account Not Found");
 		}
 		if(acc.getBalance().compareTo(amount)<0) {
-			log.warn("Account {} Insufficient balance ,Your balance less than {} ",accountNumber,amount);
+			log.warn("Withdraw failed due to Insufficient balance for account number {} ",accountNumber);
 			throw new InsufficiantBalanceException("Insufficient Balance ,Your balance less than "+amount);	
 		}
 		acc.setBalance(acc.getBalance().subtract(amount));
@@ -106,7 +107,7 @@ public class TransactionServiceImp implements TransactionService {
 		transaction.setTimestamp(LocalDateTime.now());
 		
 		Transaction t=transactionRepo.save(transaction);
-		logger.info("Withdraw {} from accountNumber {}",amount,accountNumber);
+		logger.info("Amount {} successfully deposited from account number {} ",amount,accountNumber);
 		return TransactionConverter.toDto(t);
 		
 	} 
@@ -116,26 +117,31 @@ public class TransactionServiceImp implements TransactionService {
 	public  TransactionResponseDTO Transfer(String senderAccount,String recieverAccount, BigDecimal amount) {
 
 		if(amount.compareTo(BigDecimal.ZERO)<=0) {
-			log.warn("{} Amount must be greater than 0", senderAccount);
+			log.warn("Invalid Transaction amount for account number :{}",senderAccount);
 			throw new InsufficiantBalanceException("Amount must be greater than zero");	
 		}
-		logger.info("Transaction request from accountNumber{} to accountNumber{}",senderAccount,recieverAccount);
+		
        Account sender=accountRepo.findByAccountNumber(senderAccount);
        Account reciever=accountRepo.findByAccountNumber(recieverAccount);
 		
 		if(sender==null) {
-			log.warn("Account not found {}",senderAccount);
+			log.error("Sender Account not found for account number {}",senderAccount);
 			throw new AccountNotFoundException("Account Not Found");
 		}
 		
 		if(reciever==null) {
-			log.warn("Account not found {}",recieverAccount);
+			log.error("Receiver Account not found for account number {}",recieverAccount);
 			throw new AccountNotFoundException("Account Not Found");
 		}
 		if(sender.getBalance().compareTo(amount)<0) {
-			log.warn("Account {} Insufficient balance ,Your balance less than {} ",sender.getAccountNumber(),amount);
-			throw new InsufficiantBalanceException("Insufficient Balance ,Your balance less than "+amount);	
+			log.warn("Transaction failed due to Insufficient balance for account number {}  ",sender.getAccountNumber());
+			throw new InsufficiantBalanceException("Insufficient Balance ");	
 		}
+		
+		log.info("Transaction Started from {} to {} amount :{} "
+										,sender.getAccountNumber()
+										,reciever.getAccountNumber()
+										,amount);
 		sender.setBalance(sender.getBalance().subtract(amount));
 		accountRepo.save(sender);
 		
@@ -163,7 +169,10 @@ public class TransactionServiceImp implements TransactionService {
 		
 		
 		  transactionRepo.save(recive);
-		  log.info("Amount {} send to  AccountNumber{}",amount,recieverAccount);
+	log.info("Transaction Successfull from {} to {} amount :{} "
+									,sender.getAccountNumber()
+									,reciever.getAccountNumber()
+									,amount);
 
 		return TransactionConverter.tosenderDto(t1);
 	}
@@ -172,6 +181,7 @@ public class TransactionServiceImp implements TransactionService {
 	public List<TransactionResponseDTO> getTransaction(String accountNumber) {
 		Account account=accountRepo.findByAccountNumber(accountNumber);
 		if(account==null) {
+			log.error(" Account not found for account number {}",accountNumber);
 			throw new AccountNotFoundException("Account Not Found");
 		}
 		
@@ -181,6 +191,7 @@ public class TransactionServiceImp implements TransactionService {
 		for(Transaction t:transactions) {
 			response.add(TransactionConverter.tosenderDto(t));
 		}
+		log.info("Fetched Transaction details for account number :{}",accountNumber);
 		return response;
 	}
 	

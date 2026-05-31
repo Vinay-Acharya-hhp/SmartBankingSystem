@@ -55,29 +55,48 @@ public class AccountServiceImp implements AccountService {
 		
 		Users user=userRepo.findByEmail(requestdto.getEmail());
 		if(user==null) {
+			log.error("User Not found for Email {}", requestdto.getEmail());
 			throw new UserNotFoundException("User Not Found");
 		}
 		acc.setUsers(user);
 		Account saveacc=accountRepo.save(acc);
-		log.info(AccountNumber+"Created Account");
+		log.info("Account created successfully :{}",AccountNumber);
 		return AccountConverter.toDto(saveacc);
 	}
 
 	@Override
 	public AccountResponseDTO getAccountByAccountNumber(String accountNumber) {
-		log.info("started finding "+accountNumber);
 		Account acc=accountRepo.findByAccountNumber(accountNumber);
 		if(acc==null) {
-			log.error(accountNumber+"Not Found");
+			log.error("Account Not found with account number :{}",accountNumber );
 			throw new AccountNotFoundException("Account Not Found");
 		}
-		log.info(accountNumber+"finded");
+		log.info("Fetched Account details for Accound number : {}",accountNumber);
 		return AccountConverter.toDto(acc);
 	}
+	
+	
+	@Override
+	public List<AccountResponseDTO> getAccountByEmail(String email) {
+		List<Account> acc=accountRepo.findByUsersEmail(email);
+		if(acc.isEmpty()) {
+			log.error("Account Not found for Email :{}",email );
+			throw new AccountNotFoundException("Account Not Found");
+		}
+		log.info("Fetched Account details for Email : {}",email);
+		return acc.stream()
+				.map(AccountConverter::toDto)
+				.toList();
+		
+	}
+
+	
+
 
 	@Override
 	public AccountResponseDTO deposit(String accountNumber, BigDecimal amount) {
 		if(amount.compareTo(BigDecimal.ZERO)<=0) {
+			//log.warn("");
 			throw new InsufficiantBalanceException("Amount must be greater than zero");	
 		}
 		Account acc=accountRepo.findByAccountNumber(accountNumber);
@@ -112,19 +131,7 @@ public class AccountServiceImp implements AccountService {
 		
 	}
 
-	@Override
-	public List<AccountResponseDTO> getAccountByEmail(String email) {
-		List<Account> acc=accountRepo.findByUsersEmail(email);
-		if(acc.isEmpty()) {
-			throw new AccountNotFoundException("Account Not Found");
-		}
-		
-		return acc.stream()
-				.map(AccountConverter::toDto)
-				.toList();
-		
-	}
-
+	
 	@Override
 	public void deleteAccount(String accountNumber) {
 		// TODO Auto-generated method stub

@@ -13,10 +13,12 @@ public interface UserService {
 	
 	UserResponseDTO register(UserRequestDTO requestDTO);
 	
-	LoginResponsDTO login(LoginRequestDTO loginrequestdto);
+	//LoginResponsDTO login(LoginRequestDTO loginrequestdto);
 	
 	UserResponseDTO update(String email,UserRequestDTO requestDTO);
 	
 	String DeleteUser (Long id);
+	
+	String verify(LoginRequestDTO loginrequestdto);
 
 }

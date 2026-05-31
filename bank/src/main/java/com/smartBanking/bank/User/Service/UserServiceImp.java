@@ -1,14 +1,20 @@
 package com.smartBanking.bank.User.Service;
 
+import org.apache.juli.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.smartBanking.bank.Configuration.JWTService;
 import com.smartBanking.bank.User.Dto.LoginRequestDTO;
 import com.smartBanking.bank.User.Dto.LoginResponsDTO;
 import com.smartBanking.bank.User.Dto.UserRequestDTO;
 import com.smartBanking.bank.User.Dto.UserResponseDTO;
+import com.smartBanking.bank.User.Entity.UserType;
 import com.smartBanking.bank.User.Entity.Users;
 import com.smartBanking.bank.User.Mapper.LoginConvertor;
 import com.smartBanking.bank.User.Mapper.UserConverter;
@@ -24,6 +30,11 @@ public class UserServiceImp implements UserService{
 	@Autowired
 	private UserRepo userrepo;
 	
+	@Autowired
+	private JWTService jwtservice;
+	
+	@Autowired
+	private AuthenticationManager authmanager;
 	
 	//private BCryptPasswordEncoder encoder=new BCryptPasswordEncoder(12);
 	
@@ -39,33 +50,36 @@ public class UserServiceImp implements UserService{
 
 	public UserResponseDTO register(UserRequestDTO requestDTO) {
 		if(userrepo.existsByEmail(requestDTO.getEmail())) {
-			log.warn(requestDTO.getEmail()+"Already Exists");
+			log.warn("Registration failed. Email alreday exists: {}",requestDTO.getEmail());
 			throw new ResourceAlreadyExistsException("Email Already Registerd");
 		}
 		Users users=UserConverter.toEntity(requestDTO);
+		if(users.getType()==null) {
+			users.setType(UserType.USER);
+		}
 		users.setPassword(passwordencoder.encode(requestDTO.getPassword()));
 		Users saveuser=userrepo.save(users);
-		log.info("User Register Sucessfully{}",requestDTO.getEmail());
+		log.info("User Sucessfully Register {}",requestDTO.getEmail());
 		return UserConverter.todto(saveuser);
 	}
-
-	 @Override
-		public LoginResponsDTO login(LoginRequestDTO loginrequestdto) {
-		 log.info("S");
-			Users users=userrepo.findByEmail(loginrequestdto.getEmail());
-			if(users==null )
-			{
-				log.warn("Email not found{}",loginrequestdto.getEmail());
-				throw new UserNotFoundException("User Not Found");
-			}
-			if(!passwordencoder.matches(loginrequestdto.getPassword(), users.getPassword())) {
-				
-				throw new RuntimeException("Invalid Password");
-			}
-			log.info("Login Successfully");
-			return LoginConvertor.toLoginResponsDTO(users);
-			
-	 }
+//
+//	 @Override
+//		public LoginResponsDTO login(LoginRequestDTO loginrequestdto) {
+//		
+//			Users users=userrepo.findByEmail(loginrequestdto.getEmail());
+//			if(users==null )
+//			{
+//				log.warn("Email not found {}",loginrequestdto.getEmail());
+//				throw new UserNotFoundException("User Not Found");
+//			}
+//			if(!passwordencoder.matches(loginrequestdto.getPassword(), users.getPassword())) {
+//				log.warn("Invalid password attempt for Email : {} ",loginrequestdto.getEmail());
+//				throw new RuntimeException("Invalid Password");
+//			}
+//			log.info("User Login Successfully {}",loginrequestdto.getEmail());
+//			return LoginConvertor.toLoginResponsDTO(users);
+//			
+//	 }
 
 	 @Override
 	 public UserResponseDTO update(String email, UserRequestDTO requestDTO) {
@@ -89,6 +103,21 @@ public class UserServiceImp implements UserService{
 	 public String DeleteUser(Long id) {
 		// TODO Auto-generated method stub
 		return null;
+	 }
+
+
+	 @Override
+	 public String verify(LoginRequestDTO loginrequestdto) {
+		
+		 Authentication authenticat=
+				 authmanager.authenticate(new UsernamePasswordAuthenticationToken(loginrequestdto.getEmail(),loginrequestdto.getPassword()));
+	    if(authenticat.isAuthenticated()) {
+	    	
+	    	System.out.print("success");
+	    	return jwtservice.generateToken(loginrequestdto.getEmail());
+	    }
+	    
+	    return "failed";
 	 }
 }
 

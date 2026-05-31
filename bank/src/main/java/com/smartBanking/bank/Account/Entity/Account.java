@@ -3,6 +3,8 @@ package com.smartBanking.bank.Account.Entity;
 import java.math.BigDecimal;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.smartBanking.bank.Transaction.Entity.Transaction;
 import com.smartBanking.bank.User.Entity.Users;
 
@@ -52,11 +54,12 @@ public class Account {
 	@Column(nullable=false)
 	private BigDecimal balance;
 	
+	@JsonBackReference
 	@ManyToOne
 	@JoinColumn(name="user_id",nullable=false)
 	private Users users;
 
-	
+	@JsonManagedReference
 	@OneToMany(mappedBy="account")
 	private List<Transaction> sentTransaction;
 

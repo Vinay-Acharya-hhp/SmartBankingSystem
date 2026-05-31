@@ -23,6 +23,9 @@ import com.smartBanking.bank.Account.Service.AccountService;
 import com.smartBanking.bank.User.Dto.UserResponseDTO;
 import com.smartBanking.bank.apiResponse.ApiResponse;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @RestController
 @RequestMapping("/account")
 public class AccountController {
@@ -36,53 +39,61 @@ public class AccountController {
 	
 	
 	@PostMapping("/create")
-	public ResponseEntity<ApiResponse<AccountResponseDTO>> creatAccount (@RequestBody AccountRequestDTO requestdto)
-	{
+	public ResponseEntity<ApiResponse<AccountResponseDTO>> creatAccount 
+													(@RequestBody AccountRequestDTO requestdto)
+	{   
+		log.info("Account creation request recived for Email {}" ,requestdto.getEmail());
 		AccountResponseDTO saved=accountservice.createAccount(requestdto);
-		 ApiResponse<AccountResponseDTO> response = new ApiResponse<> ("Account Created Succesfull", saved ,true , 201);
-			
-			return new ResponseEntity<>(response,HttpStatus.CREATED);
+		ApiResponse<AccountResponseDTO> response = new ApiResponse<> 
+		 											("Account Created Succesfull", saved ,true , 201);
+		return new ResponseEntity<>(response,HttpStatus.CREATED);
 		
 	}   
 	
 	@GetMapping("/get_ac/{accountNumber}")
-	public ResponseEntity<ApiResponse<AccountResponseDTO>> getAccountByAccountNumber(@PathVariable String accountNumber) {
+	public ResponseEntity<ApiResponse<AccountResponseDTO>> getAccountByAccountNumber
+														(@PathVariable String accountNumber) {
+		log.info("Fetching Account details for Account Number {}" ,accountNumber);
 		AccountResponseDTO saved=accountservice.getAccountByAccountNumber(accountNumber);
-		 ApiResponse<AccountResponseDTO> response = new ApiResponse<> ("Welcome "+accountNumber, saved ,true , 200);
-			
-			return new ResponseEntity<>(response,HttpStatus.OK);
+		ApiResponse<AccountResponseDTO> response = new ApiResponse<>	
+														("Welcome "+accountNumber, saved ,true , 200);
+		return new ResponseEntity<>(response,HttpStatus.OK);
 		
 	}
 	
 	
 	@GetMapping("/get_e/{email}")
-	public ResponseEntity<ApiResponse<List<AccountResponseDTO>>> getAccountByEmail(@PathVariable String email) {
+	public ResponseEntity<ApiResponse<List<AccountResponseDTO>>> getAccountByEmail
+															(@PathVariable String email) {
+		log.info("Fetching Account details for Email {}" ,email);
 		List<AccountResponseDTO> saved=accountservice.getAccountByEmail(email);
-		 ApiResponse<List<AccountResponseDTO>> response = new ApiResponse<> ("Welcome "+email, saved ,true , 200);
-			
-			return new ResponseEntity<>(response,HttpStatus.OK);
+		ApiResponse<List<AccountResponseDTO>> response = new ApiResponse<> 
+															("Welcome "+email, saved ,true , 200);
+		return new ResponseEntity<>(response,HttpStatus.OK);
 		
 	}
 	
 	
 	@PutMapping("{accountNumber}/deposit")
-	public ResponseEntity<ApiResponse<AccountResponseDTO>> Deposit(@PathVariable String accountNumber,
-			@RequestParam BigDecimal amount) {
+	public ResponseEntity<ApiResponse<AccountResponseDTO>> Deposit
+									(@PathVariable String accountNumber,
+									 @RequestParam BigDecimal amount) {
 		AccountResponseDTO saved=accountservice.deposit(accountNumber, amount);
-		 ApiResponse<AccountResponseDTO> response = new ApiResponse<> ("Amount deposited "+amount, saved ,true , 200);
-			
-			return new ResponseEntity<>(response,HttpStatus.OK);
+		ApiResponse<AccountResponseDTO> response = new ApiResponse<> 
+									("Amount deposited "+amount, saved ,true , 200);
+		return new ResponseEntity<>(response,HttpStatus.OK);
 	
 	}
 	
 
 	@PutMapping("{accountNumber}/withdrow")
-	public ResponseEntity<ApiResponse<AccountResponseDTO>> Withdrow(@PathVariable String accountNumber,
-			@RequestParam BigDecimal amount) {
+	public ResponseEntity<ApiResponse<AccountResponseDTO>> Withdrow
+									(@PathVariable String accountNumber,
+									 @RequestParam BigDecimal amount) {
 		AccountResponseDTO saved=accountservice.withdrow(accountNumber, amount);
-		 ApiResponse<AccountResponseDTO> response = new ApiResponse<> ("Amount Withdrowd "+amount, saved ,true , 200);
-			
-			return new ResponseEntity<>(response,HttpStatus.OK);
+		ApiResponse<AccountResponseDTO> response = new ApiResponse<>
+		 							("Amount Withdrowd "+amount, saved ,true , 200);
+		return new ResponseEntity<>(response,HttpStatus.OK);
 	
 	}
 
