@@ -1,0 +1,118 @@
+2026-05-10 10:46:21 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 15704 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-05-10 10:46:21 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
+2026-05-10 10:46:25 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 4.72 seconds (process running for 5.071)
+2026-05-10 10:46:51 [INFO] c.s.b.T.S.TransactionServiceImp -Transaction request from accountNumber976509601 to accountNumber986959154
+2026-05-10 10:46:51 [INFO] c.s.b.T.S.TransactionServiceImp -Amount 10 send from AccountNumber976509601
+2026-05-10 10:46:51 [INFO] c.s.b.T.S.TransactionServiceImp -Amount 10 send to  AccountNumber986959154
+2026-05-10 10:47:58 [INFO] c.s.b.T.S.TransactionServiceImp -Deposited request from accountNumber986959154
+2026-05-10 10:47:58 [INFO] c.s.b.T.S.TransactionServiceImp -Deposited 1000 from accountNumber 986959154
+2026-05-10 12:33:23 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 10448 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-05-10 12:33:23 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
+2026-05-10 12:34:10 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 15912 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-05-10 12:34:10 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
+2026-05-10 12:34:13 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 4.375 seconds (process running for 4.7)
+2026-05-10 13:22:12 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 9380 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-05-10 13:22:12 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
+2026-05-10 13:22:16 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 4.319 seconds (process running for 4.635)
+2026-05-10 13:22:20 [INFO] c.s.b.T.C.TransactionController -Amount Deposit request received for account number :986959154
+2026-05-10 13:22:20 [INFO] c.s.b.T.S.TransactionServiceImp -Amount 1000 successfully deposited from account number 986959154 
+2026-05-10 13:22:24 [INFO] c.s.b.T.C.TransactionController -Transfer Request received from 976509601 to 986959154 for Amount 10
+2026-05-10 13:22:24 [INFO] c.s.b.T.S.TransactionServiceImp -Transaction Started from 976509601 to 986959154 amount :10 
+2026-05-10 13:22:24 [INFO] c.s.b.T.S.TransactionServiceImp -Amount 10 send from AccountNumber976509601
+2026-05-10 13:22:24 [INFO] c.s.b.T.S.TransactionServiceImp -Transaction Successfull from 976509601 to 986959154 amount :10 
+2026-05-10 13:22:30 [INFO] c.s.b.T.C.TransactionController -Amount Withdraw request received for account number :830508892
+2026-05-10 13:22:30 [ERROR] c.s.b.T.S.TransactionServiceImp -Account not found with account number 830508892
+2026-05-10 13:22:36 [INFO] c.s.b.A.Controller.AccountController -Account creation request recived for Email vinay@gmail.com
+2026-05-10 13:22:36 [INFO] c.s.b.A.Service.AccountServiceImp -Account created successfully :700426114
+2026-05-10 13:22:41 [INFO] c.s.b.A.Controller.AccountController -Fetching Account details for Account Number 997889037
+2026-05-10 13:22:41 [ERROR] c.s.b.A.Service.AccountServiceImp -Account Not found with account number :997889037
+2026-05-10 13:22:45 [WARN] c.s.b.A.Service.AccountServiceImp -Account Not found 830508892
+2026-05-10 13:22:50 [INFO] c.s.b.A.Controller.AccountController -Fetching Account details for Email vinay@gmail.com
+2026-05-10 13:22:50 [INFO] c.s.b.A.Service.AccountServiceImp -Fetched Account details for Email : vinay@gmail.com
+2026-05-10 13:22:55 [INFO] c.s.b.User.Controller.UserController -Login request received for Email nay@gmail.com
+2026-05-10 13:22:55 [WARN] c.s.bank.User.Service.UserServiceImp -Email not found nay@gmail.com
+2026-05-10 13:22:59 [INFO] c.s.b.User.Controller.UserController -Registration request received for Email  vinay@gmail.com
+2026-05-10 13:22:59 [WARN] c.s.bank.User.Service.UserServiceImp -Registration failed. Email alreday exists: vinay@gmail.com
+2026-05-10 16:54:45 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 9624 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-05-10 16:54:45 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
+2026-05-10 16:54:50 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 5.768 seconds (process running for 6.126)
+2026-05-10 16:55:10 [INFO] c.s.b.User.Controller.UserController -Registration request received for Email  vinay@gmail.com
+2026-05-10 16:55:11 [WARN] c.s.bank.User.Service.UserServiceImp -Registration failed. Email alreday exists: vinay@gmail.com
+2026-05-10 16:56:39 [INFO] c.s.b.T.C.TransactionController -Transfer Request received from 976509601 to 986959154 for Amount 10
+2026-05-10 16:56:39 [INFO] c.s.b.T.S.TransactionServiceImp -Transaction Started from 976509601 to 986959154 amount :10 
+2026-05-10 16:56:39 [INFO] c.s.b.T.S.TransactionServiceImp -Amount 10 send from AccountNumber976509601
+2026-05-10 16:56:39 [INFO] c.s.b.T.S.TransactionServiceImp -Transaction Successfull from 976509601 to 986959154 amount :10 
+2026-05-10 17:09:59 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 18360 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-05-10 17:09:59 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
+2026-05-10 17:10:04 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 4.72 seconds (process running for 7.318)
+2026-05-10 17:10:30 [INFO] c.s.b.User.Controller.UserController -Registration request received for Email  vinay@gmail.com
+2026-05-10 17:10:30 [WARN] c.s.bank.User.Service.UserServiceImp -Registration failed. Email alreday exists: vinay@gmail.com
+2026-05-10 17:10:39 [INFO] c.s.b.T.C.TransactionController -Transfer Request received from 976509601 to 986959154 for Amount 10
+2026-05-10 17:10:39 [INFO] c.s.b.T.S.TransactionServiceImp -Transaction Started from 976509601 to 986959154 amount :10 
+2026-05-10 17:10:39 [INFO] c.s.b.T.S.TransactionServiceImp -Amount 10 send from AccountNumber976509601
+2026-05-10 17:10:39 [INFO] c.s.b.T.S.TransactionServiceImp -Transaction Successfull from 976509601 to 986959154 amount :10 
+2026-05-10 17:10:55 [INFO] c.s.b.T.C.TransactionController -Transfer Request received from 976509601 to 986959154 for Amount 10
+2026-05-10 17:10:55 [INFO] c.s.b.T.S.TransactionServiceImp -Transaction Started from 976509601 to 986959154 amount :10 
+2026-05-10 17:10:55 [INFO] c.s.b.T.S.TransactionServiceImp -Amount 10 send from AccountNumber976509601
+2026-05-10 17:10:55 [INFO] c.s.b.T.S.TransactionServiceImp -Transaction Successfull from 976509601 to 986959154 amount :10 
+2026-05-10 17:12:33 [INFO] c.s.b.T.C.TransactionController -Transfer Request received from 976509601 to 986959154 for Amount 10
+2026-05-10 17:12:33 [INFO] c.s.b.T.S.TransactionServiceImp -Transaction Started from 976509601 to 986959154 amount :10 
+2026-05-10 17:12:33 [INFO] c.s.b.T.S.TransactionServiceImp -Amount 10 send from AccountNumber976509601
+2026-05-10 17:12:33 [INFO] c.s.b.T.S.TransactionServiceImp -Transaction Successfull from 976509601 to 986959154 amount :10 
+2026-05-10 17:13:06 [INFO] c.s.b.T.C.TransactionController -Transfer Request received from 976509601 to 986959154 for Amount 10
+2026-05-10 17:13:06 [INFO] c.s.b.T.S.TransactionServiceImp -Transaction Started from 976509601 to 986959154 amount :10 
+2026-05-10 17:13:06 [INFO] c.s.b.T.S.TransactionServiceImp -Amount 10 send from AccountNumber976509601
+2026-05-10 17:13:06 [INFO] c.s.b.T.S.TransactionServiceImp -Transaction Successfull from 976509601 to 986959154 amount :10 
+2026-05-10 17:13:19 [INFO] c.s.b.T.C.TransactionController -Transfer Request received from 976509601 to 986959154 for Amount 10
+2026-05-10 17:13:19 [INFO] c.s.b.T.S.TransactionServiceImp -Transaction Started from 976509601 to 986959154 amount :10 
+2026-05-10 17:13:19 [INFO] c.s.b.T.S.TransactionServiceImp -Amount 10 send from AccountNumber976509601
+2026-05-10 17:13:19 [INFO] c.s.b.T.S.TransactionServiceImp -Transaction Successfull from 976509601 to 986959154 amount :10 
+2026-05-10 17:13:25 [INFO] c.s.b.T.C.TransactionController -Transfer Request received from 976509601 to 986959154 for Amount 10
+2026-05-10 17:13:25 [INFO] c.s.b.T.S.TransactionServiceImp -Transaction Started from 976509601 to 986959154 amount :10 
+2026-05-10 17:13:25 [INFO] c.s.b.T.S.TransactionServiceImp -Amount 10 send from AccountNumber976509601
+2026-05-10 17:13:25 [INFO] c.s.b.T.S.TransactionServiceImp -Transaction Successfull from 976509601 to 986959154 amount :10 
+2026-05-10 17:31:22 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 4936 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-05-10 17:31:22 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
+2026-05-10 17:31:26 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 4.591 seconds (process running for 4.925)
+2026-05-10 17:32:09 [INFO] c.s.b.T.C.TransactionController -Transfer Request received from 976509601 to 986959154 for Amount 10
+2026-05-10 17:32:10 [INFO] c.s.b.T.S.TransactionServiceImp -Transaction Started from 976509601 to 986959154 amount :10 
+2026-05-10 17:32:10 [INFO] c.s.b.T.S.TransactionServiceImp -Amount 10 send from AccountNumber976509601
+2026-05-10 17:32:10 [INFO] c.s.b.T.S.TransactionServiceImp -Transaction Successfull from 976509601 to 986959154 amount :10 
+2026-05-10 17:32:51 [INFO] c.s.b.T.C.TransactionController -Transfer Request received from 976509601 to 986959154 for Amount 10
+2026-05-10 17:32:51 [INFO] c.s.b.T.S.TransactionServiceImp -Transaction Started from 976509601 to 986959154 amount :10 
+2026-05-10 17:32:51 [INFO] c.s.b.T.S.TransactionServiceImp -Amount 10 send from AccountNumber976509601
+2026-05-10 17:32:51 [INFO] c.s.b.T.S.TransactionServiceImp -Transaction Successfull from 976509601 to 986959154 amount :10 
+2026-05-10 17:35:32 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 8680 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-05-10 17:35:32 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
+2026-05-10 17:36:34 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 18896 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-05-10 17:36:34 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
+2026-05-10 17:40:13 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 12120 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-05-10 17:40:13 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
+2026-05-10 17:40:17 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 4.665 seconds (process running for 4.994)
+2026-05-10 17:41:03 [INFO] c.s.b.User.Controller.UserController -Login request received for Email nay@gmail.com
+2026-05-10 17:41:03 [WARN] c.s.bank.User.Service.UserServiceImp -Email not found nay@gmail.com
+2026-05-10 17:44:06 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 6604 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-05-10 17:44:06 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
+2026-05-10 17:44:10 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 4.581 seconds (process running for 4.903)
+2026-05-10 17:44:15 [INFO] c.s.b.User.Controller.UserController -Login request received for Email nay@gmail.com
+2026-05-10 17:44:16 [WARN] c.s.bank.User.Service.UserServiceImp -Email not found nay@gmail.com
+2026-05-10 17:44:18 [INFO] c.s.b.User.Controller.UserController -Login request received for Email nay@gmail.com
+2026-05-10 17:44:18 [WARN] c.s.bank.User.Service.UserServiceImp -Email not found nay@gmail.com
+2026-05-10 17:44:28 [INFO] c.s.b.User.Controller.UserController -Registration request received for Email  vinay@gmail.com
+2026-05-10 17:44:28 [WARN] c.s.bank.User.Service.UserServiceImp -Registration failed. Email alreday exists: vinay@gmail.com
+2026-05-10 17:44:44 [INFO] c.s.b.User.Controller.UserController -Registration request received for Email  vinay@gmail.com
+2026-05-10 17:44:44 [WARN] c.s.bank.User.Service.UserServiceImp -Registration failed. Email alreday exists: vinay@gmail.com
+2026-05-10 17:45:24 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 12952 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-05-10 17:45:24 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
+2026-05-10 17:45:28 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 4.532 seconds (process running for 4.902)
+2026-05-10 17:45:33 [INFO] c.s.b.User.Controller.UserController -Registration request received for Email  vinay@gmail.com
+2026-05-10 17:45:34 [WARN] c.s.bank.User.Service.UserServiceImp -Registration failed. Email alreday exists: vinay@gmail.com
+2026-05-10 17:48:12 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 19280 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-05-10 17:48:12 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
+2026-05-10 17:48:16 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 4.584 seconds (process running for 4.942)
+2026-05-10 17:48:20 [INFO] c.s.b.User.Controller.UserController -Registration request received for Email  vinay@gmail.com
+2026-05-10 17:48:21 [WARN] c.s.bank.User.Service.UserServiceImp -Registration failed. Email alreday exists: vinay@gmail.com
+2026-05-10 17:59:37 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 2996 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-05-10 17:59:37 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
+2026-05-10 18:00:15 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 11840 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-05-10 18:00:15 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
