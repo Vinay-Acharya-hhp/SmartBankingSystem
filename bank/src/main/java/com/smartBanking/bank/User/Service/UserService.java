@@ -15,6 +15,7 @@ public interface UserService {
 	
 	//LoginResponsDTO login(LoginRequestDTO loginrequestdto);
 	
+	//LoginResponsDTO verify(LoginRequestDTO loginrequestdto);
 	UserResponseDTO update(String email,UserRequestDTO requestDTO);
 	
 	String DeleteUser (Long id);

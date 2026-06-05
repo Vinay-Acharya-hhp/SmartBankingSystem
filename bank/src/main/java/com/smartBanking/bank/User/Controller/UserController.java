@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.web.csrf.CsrfToken;
 //import org.springframework.security.web.csrf.CsrfToken;
 //import org.springframework.security.web.server.csrf.CsrfToken;
@@ -61,8 +62,32 @@ public class UserController {
 		
 	}
 	
+	
+
+	@PostMapping("/login")
+	public ResponseEntity<ApiResponse<String>> login(@RequestBody LoginRequestDTO loginrequestdto) {
+		log.info("Login request received for Email {}",loginrequestdto.getEmail());
+		try {
+		String token= userserviceimp.verify(loginrequestdto);
+		ApiResponse<String> response=new ApiResponse<>
+		  ("Login Succefully",token,true ,200);
+		
+		return new ResponseEntity<>(response,HttpStatus.OK);
+		}catch(UserNotFoundException e) {
+			ApiResponse<String> response=new ApiResponse<>
+			  ("User Not Found",null,false ,404);
+			return new ResponseEntity<>(response,HttpStatus.NOT_FOUND);
+		}
+		catch(BadCredentialsException e) {
+			ApiResponse<String> response=new ApiResponse<>
+			  ("Invalid Password",null,false ,401);
+			return new ResponseEntity<>(response,HttpStatus.UNAUTHORIZED);
+		}
+	}
+}
+	
 //	@PostMapping("/login")
-//	public ResponseEntity<ApiResponse<LoginResponsDTO>> login
+//	public ResponseEntity<ApiResponse<LoginResponsDTO>> verify
 //											    (@RequestBody LoginRequestDTO loginrequestdto){  
 //		log.info("Login request received for Email {}",loginrequestdto.getEmail());
 //		
@@ -77,34 +102,30 @@ public class UserController {
 //		
 //	}
 	
-	@PutMapping("/update/{email}")
-	 public ResponseEntity<ApiResponse<UserResponseDTO>> update
-	 							(@PathVariable String email,@RequestBody UserRequestDTO requestDTO) {
-		log.info("Update request received for Email {}",email);
-		UserResponseDTO saved = userserviceimp.update(email, requestDTO);
-	    ApiResponse<UserResponseDTO> response = new ApiResponse<>
-	    							("Update Succesfull", saved ,true , 200);
-		return new ResponseEntity<>(response,HttpStatus.OK);
-	 }
-
-
-	
-
-	@GetMapping("/getall")
-	public List<Users> getall()
-	{
-		 List<Users> users=repo.findAll();
-		 return users;
-	}
-	
-	
-	@PostMapping("/login")
-	public String login(@RequestBody LoginRequestDTO loginrequestdto) {
-		return userserviceimp.verify(loginrequestdto);
-	}
-	
-	
-}
+//	@PutMapping("/update/{email}")
+//	 public ResponseEntity<ApiResponse<UserResponseDTO>> update
+//	 							(@PathVariable String email,@RequestBody UserRequestDTO requestDTO) {
+//		log.info("Update request received for Email {}",email);
+//		UserResponseDTO saved = userserviceimp.update(email, requestDTO);
+//	    ApiResponse<UserResponseDTO> response = new ApiResponse<>
+//	    							("Update Succesfull", saved ,true , 200);
+//		return new ResponseEntity<>(response,HttpStatus.OK);
+//	 }
+//
+//
+//	
+//
+//	@GetMapping("/getall")
+//	public List<Users> getall()
+//	{
+//		 List<Users> users=repo.findAll();
+//		 return users;
+//	}
+//	
+//	
+//	
+//	
+//}
 
 	
 

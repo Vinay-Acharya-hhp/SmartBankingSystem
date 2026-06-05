@@ -108,18 +108,50 @@ public class UserServiceImp implements UserService{
 
 	 @Override
 	 public String verify(LoginRequestDTO loginrequestdto) {
-		
 		 Authentication authenticat=
 				 authmanager.authenticate(new UsernamePasswordAuthenticationToken(loginrequestdto.getEmail(),loginrequestdto.getPassword()));
 	    if(authenticat.isAuthenticated()) {
-	    	
+	    	 String token = jwtservice.generateToken(loginrequestdto.getEmail());
+	 
+     System.out.println(token);
 	    	System.out.print("success");
-	    	return jwtservice.generateToken(loginrequestdto.getEmail());
+	    	return token;
 	    }
-	    
+		
 	    return "failed";
 	 }
-}
+} 
+	
+	 
+	 
+	 
+	 
+//	 
+//	 @Override
+//	 public LoginResponsDTO verify(LoginRequestDTO loginrequestdto) {
+//
+//	     Authentication authentication =
+//	             authmanager.authenticate(
+//	                     new UsernamePasswordAuthenticationToken(
+//	                             loginrequestdto.getEmail(),
+//	                             loginrequestdto.getPassword()));
+//
+//	     if (authentication.isAuthenticated()) {
+//
+//	         String token = jwtservice.generateToken(loginrequestdto.getEmail());
+//
+//	         System.out.println(token);
+//
+////	         LoginResponsDTO response = new LoginResponsDTO();
+////	         response.setEmail(loginrequestdto.getEmail());
+////	         response.setToken(token);
+//
+//	         return LoginConvertor.toLoginResponsDTO(response);
+//	     }
+//
+//	     throw new RuntimeException("Login Failed");
+//	 }
+
 
 
 

@@ -21,6 +21,7 @@ import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 
 @Configuration
@@ -29,23 +30,28 @@ public class SecurityConfig {
 	
 	@Autowired
 	private MyUserDetailsService userDetailService;
+	
+	@Autowired
+	private JwtFilter jwtFilter;
 
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
 		return http.csrf(customizer->customizer.disable())
+				.cors(cors->{})
 				.authorizeHttpRequests(req->req
 						.requestMatchers("/h2-console/**").permitAll()
 						.requestMatchers("/user/register",
 								          "/user/login").permitAll()
-						.requestMatchers("/user/**","/transaction/**")
+						.requestMatchers("/user/**","/transaction/**","/account/**")
 						.hasRole("USER")
 						.requestMatchers("/admin/**")
 						.hasAnyRole("ADMIN")
 						.anyRequest().authenticated())
 				//.formLogin(Customizer.withDefaults())
 				.headers(h->h.frameOptions(f->f.disable()))
-				.httpBasic(Customizer.withDefaults())
+				//.httpBasic(Customizer.withDefaults())
 				.sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+				.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
 				.build();
 	}
 	

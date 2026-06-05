@@ -36,7 +36,7 @@ public class UsersPrincipal implements UserDetails{
 	@Override
 	public String getUsername() {
 		// TODO Auto-generated method stub
-		return user.getName();
+		return user.getEmail();
 	}
 
 	@Override

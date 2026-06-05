@@ -73,29 +73,29 @@ public class AccountController {
 		
 	}
 	
-	
-	@PutMapping("{accountNumber}/deposit")
-	public ResponseEntity<ApiResponse<AccountResponseDTO>> Deposit
-									(@PathVariable String accountNumber,
-									 @RequestParam BigDecimal amount) {
-		AccountResponseDTO saved=accountservice.deposit(accountNumber, amount);
-		ApiResponse<AccountResponseDTO> response = new ApiResponse<> 
-									("Amount deposited "+amount, saved ,true , 200);
-		return new ResponseEntity<>(response,HttpStatus.OK);
-	
-	}
-	
-
-	@PutMapping("{accountNumber}/withdrow")
-	public ResponseEntity<ApiResponse<AccountResponseDTO>> Withdrow
-									(@PathVariable String accountNumber,
-									 @RequestParam BigDecimal amount) {
-		AccountResponseDTO saved=accountservice.withdrow(accountNumber, amount);
-		ApiResponse<AccountResponseDTO> response = new ApiResponse<>
-		 							("Amount Withdrowd "+amount, saved ,true , 200);
-		return new ResponseEntity<>(response,HttpStatus.OK);
-	
-	}
-
+//	
+//	@PutMapping("{accountNumber}/deposit")
+//	public ResponseEntity<ApiResponse<AccountResponseDTO>> Deposit
+//									(@PathVariable String accountNumber,
+//									 @RequestParam BigDecimal amount) {
+//		AccountResponseDTO saved=accountservice.deposit(accountNumber, amount);
+//		ApiResponse<AccountResponseDTO> response = new ApiResponse<> 
+//									("Amount deposited "+amount, saved ,true , 200);
+//		return new ResponseEntity<>(response,HttpStatus.OK);
+//	
+//	}
+//	
+//
+//	@PutMapping("{accountNumber}/withdrow")
+//	public ResponseEntity<ApiResponse<AccountResponseDTO>> Withdrow
+//									(@PathVariable String accountNumber,
+//									 @RequestParam BigDecimal amount) {
+//		AccountResponseDTO saved=accountservice.withdrow(accountNumber, amount);
+//		ApiResponse<AccountResponseDTO> response = new ApiResponse<>
+//		 							("Amount Withdrowd "+amount, saved ,true , 200);
+//		return new ResponseEntity<>(response,HttpStatus.OK);
+//	
+//	}
+//
 
 }

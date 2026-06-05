@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
-//@RequiredArgsConstructor
+@RequiredArgsConstructor
 //@NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -37,11 +37,6 @@ private String message;
 		this.success = success;
 		this.status = status;
 		this.timestamp = LocalDateTime.now();
-	}
-
-
-	public ApiResponse() {
-		
 	}
 
 
