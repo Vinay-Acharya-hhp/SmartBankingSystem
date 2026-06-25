@@ -1,0 +1,47 @@
+<configuration>
+	<appender name="myConsoleAppender" 
+			  class="ch.qos.logback.core.ConsoleAppender">
+	
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss}
+					 [%level]
+					  %logger{36} 
+					  -%msg%n 
+			</pattern>
+		</encoder>
+	</appender>
+
+
+
+<!--<appender name="FILE" class="ch.qos.logback.core.FileAppender"> -->
+	<appender name="FILE" 
+			  class="ch.qos.logback.core.rolling.RollingFileAppender">
+	
+		<file>log/banking.log</file>
+	<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+	
+	<fileNamePattern>banking-%d{yy-MM-dd}.%i.log</fileNamePattern>
+	<maxFileSize>10MB</maxFileSize>
+	
+	</rollingPolicy>
+	
+		<encoder>
+			<pattern> %d{yyyy-MM-dd HH:mm:ss} [%level] %logger{36} -%msg%n</pattern>
+	
+		</encoder>
+	
+	</appender>
+
+
+	<root level="INFO">
+	 <appender-ref ref="myConsoleAppender"/>
+	</root>
+
+	<logger name="com.smartBanking.bank"
+			level="INFO"
+			additivity="false">
+		<appender-ref ref="FILE"/>
+		 <appender-ref ref="myConsoleAppender"/>
+	</logger>
+
+</configuration>
