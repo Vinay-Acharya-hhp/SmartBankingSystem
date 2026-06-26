@@ -1,0 +1,75 @@
+2026-05-29 16:40:10 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 7108 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-05-29 16:40:10 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
+2026-05-29 16:40:14 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 4.531 seconds (process running for 4.865)
+2026-05-29 19:50:36 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 13540 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-05-29 19:50:36 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
+2026-05-29 19:50:40 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 4.638 seconds (process running for 4.969)
+2026-05-29 19:51:38 [INFO] c.s.b.User.Controller.UserController -Registration request received for Email  vinay@gmail.com
+2026-05-29 19:51:38 [WARN] c.s.bank.User.Service.UserServiceImp -Registration failed. Email alreday exists: vinay@gmail.com
+2026-05-29 19:51:56 [INFO] c.s.b.User.Controller.UserController -Registration request received for Email  vinay@gmail.com
+2026-05-29 19:51:56 [WARN] c.s.bank.User.Service.UserServiceImp -Registration failed. Email alreday exists: vinay@gmail.com
+2026-05-29 19:52:09 [INFO] c.s.b.User.Controller.UserController -Registration request received for Email  vinay1@gmail.com
+2026-05-29 19:52:09 [INFO] c.s.bank.User.Service.UserServiceImp -User Sucessfully Register vinay1@gmail.com
+2026-05-29 20:00:02 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 13572 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-05-29 20:00:02 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
+2026-05-29 20:00:06 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 4.388 seconds (process running for 4.706)
+2026-05-29 20:28:43 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 14532 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-05-29 20:28:43 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
+2026-05-29 20:28:47 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 4.329 seconds (process running for 4.722)
+2026-05-29 20:30:24 [INFO] c.s.b.User.Controller.UserController -Registration request received for Email  vinay1@gmail.com
+2026-05-29 20:30:25 [WARN] c.s.bank.User.Service.UserServiceImp -Registration failed. Email alreday exists: vinay1@gmail.com
+2026-05-29 20:30:37 [INFO] c.s.b.User.Controller.UserController -Registration request received for Email  1@gmail.com
+2026-05-29 20:30:37 [INFO] c.s.bank.User.Service.UserServiceImp -User Sucessfully Register 1@gmail.com
+2026-05-29 20:33:00 [INFO] c.s.b.User.Controller.UserController -Login request received for Email 1@gmail.com
+2026-05-29 20:33:00 [INFO] c.s.bank.User.Service.UserServiceImp -User Login Successfully 1@gmail.com
+2026-05-29 20:33:28 [INFO] c.s.b.User.Controller.UserController -Login request received for Email 1@gmail.com
+2026-05-29 20:33:28 [INFO] c.s.bank.User.Service.UserServiceImp -User Login Successfully 1@gmail.com
+2026-05-29 20:33:35 [INFO] c.s.b.User.Controller.UserController -Login request received for Email 1@gmail.com
+2026-05-29 20:33:35 [INFO] c.s.bank.User.Service.UserServiceImp -User Login Successfully 1@gmail.com
+2026-05-29 20:33:47 [INFO] c.s.b.User.Controller.UserController -Login request received for Email 1@gmail.com
+2026-05-29 20:33:47 [INFO] c.s.bank.User.Service.UserServiceImp -User Login Successfully 1@gmail.com
+2026-05-29 20:34:09 [INFO] c.s.b.User.Controller.UserController -Login request received for Email 1@gmail.com
+2026-05-29 20:34:09 [INFO] c.s.bank.User.Service.UserServiceImp -User Login Successfully 1@gmail.com
+2026-05-29 20:34:59 [INFO] c.s.b.User.Controller.UserController -Registration request received for Email  1@gmail.com
+2026-05-29 20:34:59 [WARN] c.s.bank.User.Service.UserServiceImp -Registration failed. Email alreday exists: 1@gmail.com
+2026-05-29 20:35:05 [INFO] c.s.b.User.Controller.UserController -Login request received for Email 1@gmail.com
+2026-05-29 20:35:05 [INFO] c.s.bank.User.Service.UserServiceImp -User Login Successfully 1@gmail.com
+2026-05-29 20:40:41 [INFO] c.s.b.User.Controller.UserController -Login request received for Email 1@gmail.com
+2026-05-29 20:40:41 [INFO] c.s.bank.User.Service.UserServiceImp -User Login Successfully 1@gmail.com
+2026-05-29 21:06:26 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 9856 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-05-29 21:06:26 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
+2026-05-29 21:07:43 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 12440 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-05-29 21:07:43 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
+2026-05-29 21:08:18 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 2592 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-05-29 21:08:18 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
+2026-05-29 21:08:22 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 4.377 seconds (process running for 4.696)
+2026-05-29 21:08:36 [INFO] c.s.b.User.Controller.UserController -Registration request received for Email  1@gmail.com
+2026-05-29 21:08:37 [WARN] c.s.bank.User.Service.UserServiceImp -Registration failed. Email alreday exists: 1@gmail.com
+2026-05-29 21:08:47 [INFO] c.s.b.User.Controller.UserController -Registration request received for Email  2@gmail.com
+2026-05-29 21:08:48 [INFO] c.s.bank.User.Service.UserServiceImp -User Sucessfully Register 2@gmail.com
+2026-05-29 21:09:03 [INFO] c.s.b.User.Controller.UserController -Login request received for Email 1@gmail.com
+2026-05-29 21:09:03 [INFO] c.s.bank.User.Service.UserServiceImp -User Login Successfully 1@gmail.com
+2026-05-29 21:10:42 [INFO] c.s.b.T.C.TransactionController -Transfer Request received from 976509601 to 986959154 for Amount 10
+2026-05-29 21:10:42 [INFO] c.s.b.T.S.TransactionServiceImp -Transaction Started from 976509601 to 986959154 amount :10 
+2026-05-29 21:10:42 [INFO] c.s.b.T.S.TransactionServiceImp -Amount 10 send from AccountNumber976509601
+2026-05-29 21:10:42 [INFO] c.s.b.T.S.TransactionServiceImp -Transaction Successfull from 976509601 to 986959154 amount :10 
+2026-05-29 21:11:02 [INFO] c.s.b.T.C.TransactionController -Transfer Request received from 976509601 to 986959154 for Amount 10
+2026-05-29 21:11:02 [INFO] c.s.b.T.S.TransactionServiceImp -Transaction Started from 976509601 to 986959154 amount :10 
+2026-05-29 21:11:02 [INFO] c.s.b.T.S.TransactionServiceImp -Amount 10 send from AccountNumber976509601
+2026-05-29 21:11:02 [INFO] c.s.b.T.S.TransactionServiceImp -Transaction Successfull from 976509601 to 986959154 amount :10 
+2026-05-29 21:18:43 [INFO] c.s.b.User.Controller.UserController -Registration request received for Email  2@gmail.com
+2026-05-29 21:18:43 [WARN] c.s.bank.User.Service.UserServiceImp -Registration failed. Email alreday exists: 2@gmail.com
+2026-05-29 21:19:45 [INFO] c.s.b.User.Controller.UserController -Registration request received for Email  3@gmail.com
+2026-05-29 21:19:45 [INFO] c.s.bank.User.Service.UserServiceImp -User Sucessfully Register 3@gmail.com
+2026-05-29 21:19:59 [INFO] c.s.b.T.C.TransactionController -Transfer Request received from 976509601 to 986959154 for Amount 10
+2026-05-29 21:20:00 [INFO] c.s.b.T.S.TransactionServiceImp -Transaction Started from 976509601 to 986959154 amount :10 
+2026-05-29 21:20:00 [INFO] c.s.b.T.S.TransactionServiceImp -Amount 10 send from AccountNumber976509601
+2026-05-29 21:20:00 [INFO] c.s.b.T.S.TransactionServiceImp -Transaction Successfull from 976509601 to 986959154 amount :10 
+2026-05-29 21:20:07 [INFO] c.s.b.T.C.TransactionController -Transfer Request received from 976509601 to 986959154 for Amount 10
+2026-05-29 21:20:07 [INFO] c.s.b.T.S.TransactionServiceImp -Transaction Started from 976509601 to 986959154 amount :10 
+2026-05-29 21:20:07 [INFO] c.s.b.T.S.TransactionServiceImp -Amount 10 send from AccountNumber976509601
+2026-05-29 21:20:07 [INFO] c.s.b.T.S.TransactionServiceImp -Transaction Successfull from 976509601 to 986959154 amount :10 
+2026-05-29 21:20:48 [INFO] c.s.b.T.C.TransactionController -Transfer Request received from 986959154 to 986959154 for Amount 10
+2026-05-29 21:20:48 [INFO] c.s.b.T.S.TransactionServiceImp -Transaction Started from 986959154 to 986959154 amount :10 
+2026-05-29 21:20:48 [INFO] c.s.b.T.S.TransactionServiceImp -Amount 10 send from AccountNumber986959154
+2026-05-29 21:20:48 [INFO] c.s.b.T.S.TransactionServiceImp -Transaction Successfull from 986959154 to 986959154 amount :10 
