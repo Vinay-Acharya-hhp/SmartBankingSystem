@@ -1,0 +1,6 @@
+2026-06-13 19:40:09 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 19332 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-06-13 19:40:09 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
+2026-06-13 19:40:15 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 6.44 seconds (process running for 6.899)
+2026-06-13 19:42:02 [INFO] c.s.b.User.Controller.UserController -Login request received for Email s@gmail.com
+2026-06-13 19:42:59 [INFO] c.s.b.A.Controller.AccountController -Account creation request recived for Email s@gmail.com
+2026-06-13 19:42:59 [INFO] c.s.b.A.Service.AccountServiceImp -Account created successfully :449459362

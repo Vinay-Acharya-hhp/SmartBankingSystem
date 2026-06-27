@@ -1,102 +1,24 @@
-2026-06-05 10:30:33 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 8668 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
-2026-06-05 10:30:33 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
-2026-06-05 10:30:37 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 5.276 seconds (process running for 5.767)
-2026-06-05 11:12:18 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 3232 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
-2026-06-05 11:12:18 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
-2026-06-05 11:12:22 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 4.702 seconds (process running for 5.02)
-2026-06-05 11:17:53 [INFO] c.s.b.User.Controller.UserController -Login request received for Email bmail.com
-2026-06-05 11:18:13 [INFO] c.s.b.User.Controller.UserController -Login request received for Email 1@gmail.com
-2026-06-05 11:19:22 [INFO] c.s.b.User.Controller.UserController -Registration request received for Email  b@gmail.com
-2026-06-05 11:19:22 [WARN] c.s.bank.User.Service.UserServiceImp -Registration failed. Email alreday exists: b@gmail.com
-2026-06-05 11:19:33 [INFO] c.s.b.User.Controller.UserController -Registration request received for Email  c@gmail.com
-2026-06-05 11:19:33 [INFO] c.s.bank.User.Service.UserServiceImp -User Sucessfully Register c@gmail.com
-2026-06-05 11:19:43 [INFO] c.s.b.User.Controller.UserController -Login request received for Email c@gmail.com
-2026-06-05 11:24:05 [INFO] c.s.b.User.Controller.UserController -Login request received for Email c@gmail.com
-2026-06-05 11:24:18 [INFO] c.s.b.User.Controller.UserController -Login request received for Email c@gmail.com
-2026-06-05 13:10:06 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 16332 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
-2026-06-05 13:10:06 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
-2026-06-05 13:10:11 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 4.637 seconds (process running for 4.997)
-2026-06-05 13:11:19 [INFO] c.s.b.User.Controller.UserController -Login request received for Email c@gmail.com
-2026-06-05 13:25:26 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 21308 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
-2026-06-05 13:25:26 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
-2026-06-05 13:25:30 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 4.502 seconds (process running for 4.846)
-2026-06-05 13:25:59 [INFO] c.s.b.User.Controller.UserController -Login request received for Email c@gmail.com
-2026-06-05 13:26:14 [INFO] c.s.b.A.Controller.AccountController -Account creation request recived for Email b@gmail.com
-2026-06-05 13:26:14 [INFO] c.s.b.A.Service.AccountServiceImp -Account created successfully :451479426
-2026-06-05 13:27:11 [INFO] c.s.b.T.C.TransactionController -Amount Deposit request received for account number :451479426
-2026-06-05 13:27:11 [INFO] c.s.b.T.S.TransactionServiceImp -Amount 1000 successfully deposited from account number 451479426 
-2026-06-05 13:47:37 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 14240 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
-2026-06-05 13:47:37 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
-2026-06-05 13:47:55 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 20.301 seconds (process running for 21.885)
-2026-06-05 13:48:09 [INFO] c.s.b.User.Controller.UserController -Login request received for Email c@gmail.com
-2026-06-05 13:51:39 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 8020 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
-2026-06-05 13:51:39 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
-2026-06-05 13:51:56 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 19.94 seconds (process running for 21.534)
-2026-06-05 13:52:13 [INFO] c.s.b.User.Controller.UserController -Login request received for Email c@gmail.com
-2026-06-05 13:52:58 [INFO] c.s.b.A.Controller.AccountController -Account creation request recived for Email c@gmail.com
-2026-06-05 13:52:58 [INFO] c.s.b.A.Service.AccountServiceImp -Account created successfully :637411693
-2026-06-05 14:29:24 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 23100 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
-2026-06-05 14:29:24 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
-2026-06-05 14:29:27 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 4.26 seconds (process running for 4.669)
-2026-06-05 14:29:50 [INFO] c.s.b.User.Controller.UserController -Login request received for Email c@gmail.com
-2026-06-05 14:34:37 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 19268 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
-2026-06-05 14:34:37 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
-2026-06-05 14:34:41 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 4.623 seconds (process running for 4.971)
-2026-06-05 14:34:52 [INFO] c.s.b.User.Controller.UserController -Login request received for Email c@gmail.com
-2026-06-05 14:40:31 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 14740 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
-2026-06-05 14:40:31 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
-2026-06-05 14:40:35 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 4.45 seconds (process running for 4.796)
-2026-06-05 14:40:45 [INFO] c.s.b.User.Controller.UserController -Login request received for Email c@gmail.com
-2026-06-05 14:56:55 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 14984 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
-2026-06-05 14:56:55 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
-2026-06-05 14:56:58 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 4.298 seconds (process running for 4.631)
-2026-06-05 14:57:07 [INFO] c.s.b.User.Controller.UserController -Login request received for Email c@gmail.com
-2026-06-05 14:59:51 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 2776 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
-2026-06-05 14:59:51 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
-2026-06-05 14:59:55 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 4.429 seconds (process running for 4.763)
-2026-06-05 15:00:05 [INFO] c.s.b.User.Controller.UserController -Login request received for Email c@gmail.com
-2026-06-05 15:03:17 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 23212 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
-2026-06-05 15:03:17 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
-2026-06-05 15:06:22 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 19320 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
-2026-06-05 15:06:22 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
-2026-06-05 15:06:26 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 4.366 seconds (process running for 4.706)
-2026-06-05 15:06:53 [INFO] c.s.b.User.Controller.UserController -Registration request received for Email  s@gmail.com
-2026-06-05 15:06:53 [INFO] c.s.bank.User.Service.UserServiceImp -User Sucessfully Register s@gmail.com
-2026-06-05 15:07:03 [INFO] c.s.b.User.Controller.UserController -Login request received for Email s@gmail.com
-2026-06-05 15:07:34 [INFO] c.s.b.A.Controller.AccountController -Account creation request recived for Email s@gmail.com
-2026-06-05 15:07:34 [INFO] c.s.b.A.Service.AccountServiceImp -Account created successfully :546142697
-2026-06-05 15:08:44 [INFO] c.s.b.T.C.TransactionController -Amount Deposit request received for account number :546142697
-2026-06-05 15:08:45 [INFO] c.s.b.T.S.TransactionServiceImp -Amount 1000 successfully deposited from account number 546142697 
-2026-06-05 15:10:16 [INFO] c.s.b.A.Controller.AccountController -Fetching Account details for Account Number 997889037
-2026-06-05 15:10:16 [ERROR] c.s.b.A.Service.AccountServiceImp -Account Not found with account number :997889037
-2026-06-05 15:10:24 [INFO] c.s.b.A.Controller.AccountController -Fetching Account details for Account Number 546142697
-2026-06-05 15:10:24 [INFO] c.s.b.A.Service.AccountServiceImp -Fetched Account details for Accound number : 546142697
-2026-06-05 15:11:26 [INFO] c.s.b.User.Controller.UserController -Login request received for Email admin@bank.com
-2026-06-05 15:13:46 [INFO] c.s.b.T.C.TransactionController -Amount Deposit request received for account number :546142697
-2026-06-05 15:13:46 [INFO] c.s.b.T.S.TransactionServiceImp -Amount 1000 successfully deposited from account number 546142697 
-2026-06-05 15:14:53 [INFO] c.s.b.A.Controller.AccountController -Fetching Account details for Email emain=s@gmail.com
-2026-06-05 15:14:53 [ERROR] c.s.b.A.Service.AccountServiceImp -Account Not found for Email :emain=s@gmail.com
-2026-06-05 15:15:10 [INFO] c.s.b.A.Controller.AccountController -Fetching Account details for Email email=s@gmail.com
-2026-06-05 15:15:10 [ERROR] c.s.b.A.Service.AccountServiceImp -Account Not found for Email :email=s@gmail.com
-2026-06-05 15:15:44 [INFO] c.s.b.User.Controller.UserController -Login request received for Email s@gmail.com
-2026-06-05 15:16:07 [INFO] c.s.b.A.Controller.AccountController -Fetching Account details for Email email=s@gmail.com
-2026-06-05 15:16:07 [ERROR] c.s.b.A.Service.AccountServiceImp -Account Not found for Email :email=s@gmail.com
-2026-06-05 15:17:34 [INFO] c.s.b.A.Controller.AccountController -Fetching Account details for Account Number 546142697
-2026-06-05 15:17:34 [INFO] c.s.b.A.Service.AccountServiceImp -Fetched Account details for Accound number : 546142697
-2026-06-05 15:18:29 [INFO] c.s.b.A.Controller.AccountController -Fetching Account details for Email s@gmail.com
-2026-06-05 15:18:29 [INFO] c.s.b.A.Service.AccountServiceImp -Fetched Account details for Email : s@gmail.com
-2026-06-05 15:19:15 [INFO] c.s.b.A.Controller.AccountController -Fetching Account details for Email s@gmail.com
-2026-06-05 15:19:15 [INFO] c.s.b.A.Service.AccountServiceImp -Fetched Account details for Email : s@gmail.com
-2026-06-05 15:22:29 [INFO] c.s.b.User.Controller.UserController -Login request received for Email admin@bank.com
-2026-06-05 15:25:44 [INFO] c.s.b.User.Controller.UserController -Login request received for Email s@gmail.com
-2026-06-05 15:28:44 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 5948 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
-2026-06-05 15:28:44 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
-2026-06-05 15:28:48 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 4.406 seconds (process running for 4.777)
-2026-06-05 15:28:56 [INFO] c.s.b.User.Controller.UserController -Login request received for Email s@gmail.com
-2026-06-05 15:29:04 [INFO] c.s.b.T.C.TransactionController -Amount Withdraw request received for account number :546142697
-2026-06-05 15:29:04 [INFO] c.s.b.T.S.TransactionServiceImp -Amount 1000 successfully deposited from account number 546142697 
-2026-06-05 15:29:40 [INFO] c.s.b.T.C.TransactionController -Amount Deposit request received for account number :546142697
-2026-06-05 15:29:40 [INFO] c.s.b.T.S.TransactionServiceImp -Amount 1000 successfully deposited from account number 546142697 
-2026-06-05 15:30:35 [INFO] c.s.b.User.Controller.UserController -Login request received for Email s@gmail.com
-2026-06-05 15:31:05 [INFO] c.s.b.T.C.TransactionController -Amount Withdraw request received for account number :546142697
-2026-06-05 15:31:05 [INFO] c.s.b.T.S.TransactionServiceImp -Amount 1000 successfully deposited from account number 546142697 
+2026-06-27 10:19:31 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 3308 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-06-27 10:19:31 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
+2026-06-27 10:19:35 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 5.239 seconds (process running for 5.77)
+2026-06-27 10:25:48 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 14652 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-06-27 10:25:48 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
+2026-06-27 10:27:14 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 19580 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-06-27 10:27:14 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
+2026-06-27 10:27:18 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 4.277 seconds (process running for 4.616)
+2026-06-27 10:27:43 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 18856 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-06-27 10:27:43 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
+2026-06-27 10:27:47 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 4.302 seconds (process running for 4.635)
+2026-06-27 10:32:05 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 12496 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-06-27 10:32:05 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
+2026-06-27 10:32:09 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 4.391 seconds (process running for 4.723)
+2026-06-27 20:46:55 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 11504 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-06-27 20:46:55 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
+2026-06-27 20:48:05 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 3104 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-06-27 20:48:05 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
+2026-06-27 21:30:48 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 4620 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-06-27 21:30:48 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
+2026-06-27 21:30:53 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 5.659 seconds (process running for 6.046)
+2026-06-27 21:31:32 [INFO] c.s.b.User.Controller.UserController -Registration request received for Email  x@gmail.com
+2026-06-27 21:31:32 [INFO] c.s.bank.User.Service.UserServiceImp -User Sucessfully Register x@gmail.com
+2026-06-27 21:33:04 [INFO] c.s.b.User.Controller.UserController -Login request received for Email x@gmail.com

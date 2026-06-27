@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.web.csrf.CsrfToken;
+import org.springframework.web.bind.annotation.CrossOrigin;
 //import org.springframework.security.web.csrf.CsrfToken;
 //import org.springframework.security.web.server.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,7 +37,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 
-
+@CrossOrigin(origins="http://localhost:5173")
 @Slf4j
 @RestController
 @RequestMapping("/user")
@@ -63,7 +64,7 @@ public class UserController {
 	}
 	
 	
-
+    
 	@PostMapping("/login")
 	public ResponseEntity<ApiResponse<String>> login(@RequestBody LoginRequestDTO loginrequestdto) {
 		log.info("Login request received for Email {}",loginrequestdto.getEmail());

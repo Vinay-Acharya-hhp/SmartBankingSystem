@@ -1,0 +1,25 @@
+2026-06-15 12:50:50 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 16360 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-06-15 12:50:50 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
+2026-06-15 12:50:54 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 4.948 seconds (process running for 5.378)
+2026-06-15 12:51:57 [INFO] c.s.b.User.Controller.UserController -Registration request received for Email  m@gmail.com
+2026-06-15 12:51:57 [INFO] c.s.bank.User.Service.UserServiceImp -User Sucessfully Register m@gmail.com
+2026-06-15 12:54:34 [INFO] c.s.b.User.Controller.UserController -Login request received for Email m@gmail.com
+2026-06-15 12:55:02 [INFO] c.s.b.User.Controller.UserController -Login request received for Email m@gmail.com
+2026-06-15 12:55:38 [INFO] c.s.b.A.Controller.AccountController -Account creation request recived for Email null
+2026-06-15 12:55:38 [ERROR] c.s.b.A.Service.AccountServiceImp -User Not found for Email null
+2026-06-15 12:55:46 [INFO] c.s.b.A.Controller.AccountController -Account creation request recived for Email null
+2026-06-15 12:55:46 [ERROR] c.s.b.A.Service.AccountServiceImp -User Not found for Email null
+2026-06-15 12:57:45 [INFO] c.s.b.A.Controller.AccountController -Account creation request recived for Email null
+2026-06-15 12:57:45 [ERROR] c.s.b.A.Service.AccountServiceImp -User Not found for Email null
+2026-06-15 12:57:56 [INFO] c.s.b.A.Controller.AccountController -Account creation request recived for Email null
+2026-06-15 12:57:56 [ERROR] c.s.b.A.Service.AccountServiceImp -User Not found for Email null
+2026-06-15 12:58:16 [INFO] c.s.b.A.Controller.AccountController -Account creation request recived for Email null
+2026-06-15 12:58:16 [ERROR] c.s.b.A.Service.AccountServiceImp -User Not found for Email null
+2026-06-15 12:59:00 [INFO] c.s.b.A.Controller.AccountController -Account creation request recived for Email null
+2026-06-15 12:59:00 [ERROR] c.s.b.A.Service.AccountServiceImp -User Not found for Email null
+2026-06-15 14:08:56 [INFO] c.s.bank.BankApplicationTests -Starting BankApplicationTests using Java 21.0.10 with PID 6376 (started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-06-15 14:08:56 [INFO] c.s.bank.BankApplicationTests -No active profile set, falling back to 1 default profile: "default"
+2026-06-15 14:09:00 [INFO] c.s.bank.BankApplicationTests -Started BankApplicationTests in 4.096 seconds (process running for 5.058)
+2026-06-15 14:12:46 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication v0.0.1-SNAPSHOT using Java 21.0.10 with PID 15860 (C:\Users\vinay\git\SmartBankingsystem\bank\target\smartBanking.jar started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-06-15 14:12:46 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
+2026-06-15 14:12:50 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 4.834 seconds (process running for 5.277)

@@ -39,7 +39,7 @@ public class SecurityConfig {
 		return http.csrf(customizer->customizer.disable())
 				.cors(cors->{})
 				.authorizeHttpRequests(req->req
-						.requestMatchers("/h2-console/**").permitAll()
+						//.requestMatchers("/h2-console/**").permitAll()
 						.requestMatchers("/user/register",
 								          "/user/login").permitAll()
 						.requestMatchers("/user/**","/transaction/**","/account/**")
@@ -48,7 +48,7 @@ public class SecurityConfig {
 						.hasAnyRole("ADMIN")
 						.anyRequest().authenticated())
 				//.formLogin(Customizer.withDefaults())
-				.headers(h->h.frameOptions(f->f.disable()))
+				//.headers(h->h.frameOptions(f->f.disable()))
 				//.httpBasic(Customizer.withDefaults())
 				.sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 				.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)

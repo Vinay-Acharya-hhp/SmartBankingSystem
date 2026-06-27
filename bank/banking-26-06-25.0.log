@@ -1,0 +1,17 @@
+2026-06-25 20:08:17 [INFO] c.smartBanking.bank.BankApplication -Starting BankApplication using Java 21.0.10 with PID 20652 (C:\Users\vinay\git\SmartBankingsystem\bank\target\classes started by vinay in C:\Users\vinay\git\SmartBankingsystem\bank)
+2026-06-25 20:08:17 [INFO] c.smartBanking.bank.BankApplication -No active profile set, falling back to 1 default profile: "default"
+2026-06-25 20:08:21 [INFO] c.smartBanking.bank.BankApplication -Started BankApplication in 5.013 seconds (process running for 5.393)
+2026-06-25 20:09:17 [INFO] c.s.b.User.Controller.UserController -Registration request received for Email  vinay@gmail.com
+2026-06-25 20:09:17 [WARN] c.s.bank.User.Service.UserServiceImp -Registration failed. Email alreday exists: vinay@gmail.com
+2026-06-25 20:09:26 [INFO] c.s.b.User.Controller.UserController -Registration request received for Email  m@gmail.com
+2026-06-25 20:09:26 [WARN] c.s.bank.User.Service.UserServiceImp -Registration failed. Email alreday exists: m@gmail.com
+2026-06-25 20:09:36 [INFO] c.s.b.User.Controller.UserController -Registration request received for Email  n@gmail.com
+2026-06-25 20:09:36 [INFO] c.s.bank.User.Service.UserServiceImp -User Sucessfully Register n@gmail.com
+2026-06-25 20:09:43 [INFO] c.s.b.User.Controller.UserController -Login request received for Email n@gmail.com
+2026-06-25 20:10:10 [INFO] c.s.b.A.Controller.AccountController -Account creation request recived for Email n@gmail.com
+2026-06-25 20:10:10 [INFO] c.s.b.A.Service.AccountServiceImp -Account created successfully :987089222
+2026-06-25 20:11:18 [INFO] c.s.b.User.Controller.UserController -Login request received for Email a@gmail.com
+2026-06-25 20:11:23 [INFO] c.s.b.User.Controller.UserController -Login request received for Email v@gmail.com
+2026-06-25 20:11:28 [INFO] c.s.b.User.Controller.UserController -Login request received for Email vinay@gmail.com
+2026-06-25 20:11:39 [INFO] c.s.b.User.Controller.UserController -Login request received for Email a@gmail.com
+2026-06-25 20:11:45 [INFO] c.s.b.User.Controller.UserController -Login request received for Email m@gmail.com
